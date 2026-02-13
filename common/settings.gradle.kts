@@ -1,5 +1,5 @@
 //
-// © 2025-present https://github.com/cengiz-pz
+// © 2026-present https://github.com/cengiz-pz
 //
 
 pluginManagement {
@@ -16,10 +16,14 @@ dependencyResolutionManagement {
 		google()
 		mavenCentral()
 		flatDir {
-			dirs("${rootDir}/libs")
+			dirs("${rootDir}/../android/libs")
 		}
 	}
 }
 
 rootProject.name = "godot-oauth2-plugin"
-include(":oauth2")
+include(":android")
+include(":addon")
+
+project(":android").projectDir = file("../android")
+project(":addon").projectDir = file("../addon")

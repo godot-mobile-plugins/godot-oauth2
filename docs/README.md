@@ -1,12 +1,12 @@
 <p align="center">
-	<img width="256" height="256" src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/demo/assets/oauth2-android.png">
+	<img width="256" height="256" src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/demo/assets/oauth2-android.png">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<img width="256" height="256" src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/demo/assets/oauth2-ios.png">
+	<img width="256" height="256" src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/demo/assets/oauth2-ios.png">
 </p>
 
 ---
 
-# <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="24"> Godot OAuth 2.0 Plugin
+# <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> Godot OAuth 2.0 Plugin
 
 A Godot plugin that provides a unified GDScript interface for OAuth 2.0 authentication flows on Android and iOS.
 
@@ -25,7 +25,7 @@ It supports popular OAuth providers via presets (Google, Apple, GitHub, Discord,
 
 ---
 
-## <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="20"> Table of Contents
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Table of Contents
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
@@ -43,7 +43,7 @@ It supports popular OAuth providers via presets (Google, Apple, GitHub, Discord,
 
 <a name="installation"></a>
 
-## <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="20"> Installation
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Installation
 
 Before installing this plugin, make sure to uninstall any previous versions of the same plugin.
 
@@ -54,7 +54,7 @@ There are 2 ways to install the OAuth2 plugin into your project:
 - Through the Godot Editor's AssetLib
 - Manually by downloading archives from GitHub
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="18"> Installing via AssetLib
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="18"> Installing via AssetLib
 
 Steps:
 
@@ -74,12 +74,12 @@ On the installation dialog:
 
 - _For iOS, also enable the plugin in the export settings._
 
-#### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> Installing both Android and iOS versions
+#### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Installing both Android and iOS versions
 
 When installing via AssetLib, the installer may warn that some files conflict.
 This is expected and can be safely ignored, as both versions share the same addon code.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="18"> Installing manually
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="18"> Installing manually
 
 Steps:
 
@@ -97,17 +97,17 @@ Steps:
 
 <a name="dependencies"></a>
 
-## <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="20"> Dependencies
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Dependencies
 
 **`Deeplink Plugin` version `5.2`**
 
-The [Deeplink Plugin](https://github.com/godot-sdk-integrations/godot-deeplink) is required to receive OAuth redirect callbacks via custom URI schemes.
+The [Deeplink Plugin](https://github.com/godot-mobile-plugins/godot-deeplink) is required to receive OAuth redirect callbacks via custom URI schemes.
 
 ---
 
 <a name="usage"></a>
 
-## <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="20"> Usage
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Usage
 
 - Add an `OAuth2` node to your main scene or to an autoload/global scene.
 
@@ -156,7 +156,7 @@ func _on_auth_cancelled():
 
 <a name="signals"></a>
 
-## <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="20"> Signals
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Signals
 
 Register listeners to the following signals of the OAuth2 node:
 
@@ -176,7 +176,7 @@ Emitted when the user cancels the authentication flow.
 
 <a name="methods"></a>
 
-## <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="20"> Methods
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Methods
 
 - `authorize() -> void`
 Starts the OAuth 2.0 authorization flow.
@@ -209,19 +209,19 @@ Clears all sessions for a specific provider.
 
 <a name="classes"></a>
 
-## <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="20"> Classes
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Classes
 
-Plugin classes.
+This section documents the GDScript interface classes implemented and exposed by the plugin.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> OAuth2
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> OAuth2
 
 Main node that manages OAuth authorization flows, token exchange, and session storage.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> OAuth2Config
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> OAuth2Config
 
 Provides provider presets and configuration helpers for OAuth2 providers.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> ProviderConfig
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> ProviderConfig
 
 Encapsulates configuration for OAuth2 providers.
 
@@ -229,7 +229,7 @@ Encapsulates configuration for OAuth2 providers.
 
 <a name="providers"></a>
 
-## <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="20"> Providers
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Providers
 
 The plugin includes built-in presets for common OAuth 2.0 providers as well as a fully Custom provider option.
 Each provider requires creating an OAuth2 client in the provider’s developer console and configuring redirect URIs correctly.
@@ -237,7 +237,7 @@ Each provider requires creating an OAuth2 client in the provider’s developer c
 **Important**:
 Redirect URIs must exactly match what is configured in the provider dashboard, including scheme, host, path, and trailing slashes.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> Google
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Google
 
 Console:
 https://console.cloud.google.com/apis/credentials
@@ -258,7 +258,7 @@ Notes:
 
 Default scopes: openid, profile, email.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> Apple
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Apple
 
 Console:
 https://developer.apple.com/account/resources/identifiers/list
@@ -285,7 +285,7 @@ Notes:
 
 Requires additional backend setup for most mobile games.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> Discord
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Discord
 
 Console:
 https://discord.com/developers/applications
@@ -305,7 +305,7 @@ Notes:
 
 Default scopes: identify, email.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> GitHub
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> GitHub
 
 Console:
 https://github.com/settings/developers
@@ -324,7 +324,7 @@ Notes:
 
 Default scopes: read:user, user:email.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> Auth0
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Auth0
 
 Console:
 https://manage.auth0.com/
@@ -344,7 +344,7 @@ Notes:
 
 Default scopes: openid, profile, email, offline_access.
 
-### <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="16"> Custom
+### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Custom
 
 Use this option for any OAuth 2.0 compliant provider not listed above.
 
@@ -372,7 +372,7 @@ Notes:
 
 <a name="platform-specific-notes"></a>
 
-## <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="20"> Platform-Specific Notes
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Platform-Specific Notes
 ### Android
 
 Download Android export templates
@@ -405,41 +405,45 @@ See Godot iOS Export Troubleshooting
 
 <a name="links"></a>
 
-# <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="24"> Links
+# <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> Links
 
-- [AssetLib Entry Android](https://godotengine.org/asset-library/asset/4582)
-- [AssetLib Entry iOS](https://godotengine.org/asset-library/asset/4581)
+- [AssetLib Entry Android](https://godotengine.org/asset-library/asset/4601)
+- [AssetLib Entry iOS](https://godotengine.org/asset-library/asset/4602)
 
 ---
 
 <a name="all-plugins"></a>
 
-# <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="24"> All Plugins
+# <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> All Plugins
 
 | Plugin | Android | iOS | Free | Open Source | License |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| [Notification Scheduler](https://github.com/godot-sdk-integrations/godot-notification-scheduler) | ✅ | ✅ | ✅ | ✅ | MIT |
 | [Admob](https://github.com/godot-sdk-integrations/godot-admob) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [Deeplink](https://github.com/godot-sdk-integrations/godot-deeplink) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [Share](https://github.com/godot-sdk-integrations/godot-share) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [In-App Review](https://github.com/godot-sdk-integrations/godot-inapp-review) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [Connection State](https://github.com/godot-sdk-integrations/godot-connection-state) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [OAuth 2.0](https://github.com/godot-sdk-integrations/godot-oauth2) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [Notification Scheduler](https://github.com/godot-mobile-plugins/godot-notification-scheduler) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [Deeplink](https://github.com/godot-mobile-plugins/godot-deeplink) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [Share](https://github.com/godot-mobile-plugins/godot-share) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [In-App Review](https://github.com/godot-mobile-plugins/godot-inapp-review) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [Native Camera](https://github.com/godot-mobile-plugins/godot-native-camera) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [Connection State](https://github.com/godot-mobile-plugins/godot-connection-state) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [OAuth 2.0](https://github.com/godot-mobile-plugins/godot-oauth2) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [QR](https://github.com/godot-mobile-plugins/godot-qr) | ✅ | ✅ | ✅ | ✅ | MIT |
 
 ---
 
 <a name="credits"></a>
 
-# <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="24"> Credits
+# <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> Credits
 
 Developed by [Cengiz](https://github.com/cengiz-pz)
 
-Original repository: [Godot OAuth 2.0 Plugin](https://github.com/godot-sdk-integrations/godot-oauth2)
+Based on [Godot Mobile Plugin Template](https://github.com/godot-mobile-plugins/godot-plugin-template)
+
+Original repository: [Godot OAuth 2.0 Plugin](https://github.com/godot-mobile-plugins/godot-oauth2)
 
 ---
 
 <a name="contributing"></a>
 
-# <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-oauth2/main/addon/icon.png" width="24"> Contributing
+# <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> Contributing
 
-See [the contribution guide](https://github.com/godot-sdk-integrations/godot-oauth2?tab=contributing-ov-file) if you would like to contribute to this project.
+See [the contribution guide](https://github.com/godot-mobile-plugins/godot-oauth2?tab=contributing-ov-file) if you would like to contribute to this project.

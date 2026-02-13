@@ -3,6 +3,7 @@
 #
 
 @tool
+@icon("icon.png")
 class_name OAuth2 extends Node
 
 ## Emitted when the authentication flow is initiated.

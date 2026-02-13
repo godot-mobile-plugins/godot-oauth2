@@ -21,7 +21,6 @@ var ios_export_plugin: IosExportPlugin
 
 
 func _enter_tree() -> void:
-	add_custom_type(PLUGIN_NODE_TYPE_NAME, PLUGIN_PARENT_NODE_TYPE, preload("%s.gd" % PLUGIN_NODE_TYPE_NAME), preload("icon.png"))
 	android_export_plugin = AndroidExportPlugin.new()
 	add_export_plugin(android_export_plugin)
 	ios_export_plugin = IosExportPlugin.new()
@@ -29,7 +28,6 @@ func _enter_tree() -> void:
 
 
 func _exit_tree() -> void:
-	remove_custom_type(PLUGIN_NODE_TYPE_NAME)
 	remove_export_plugin(android_export_plugin)
 	android_export_plugin = null
 	remove_export_plugin(ios_export_plugin)

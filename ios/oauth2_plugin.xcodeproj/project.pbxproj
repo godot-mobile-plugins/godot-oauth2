@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -379,18 +379,10 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-framework",
-					os,
-					"-lswiftCore",
-					"-lswiftDispatch",
-					"-lswiftObjectiveC",
-					"-lswiftUIKit",
-					"-lswiftFoundation",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "oauth2/oauth2_plugin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "src/oauth2_plugin-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -460,18 +452,10 @@
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
-					"-ObjC",
-					"-framework",
-					os,
-					"-lswiftCore",
-					"-lswiftDispatch",
-					"-lswiftObjectiveC",
-					"-lswiftUIKit",
-					"-lswiftFoundation",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "oauth2/oauth2_plugin-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "src/oauth2_plugin-Bridging-Header.h";
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
