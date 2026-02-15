@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bcqb5hwnjbtob" path="res://Main.gd" id="1_wt50o"]
 [ext_resource type="Texture2D" uid="uid://ccwvfcumkwxsd" path="res://assets/oauth2-android.png" id="2_qti4s"]
 [ext_resource type="Texture2D" uid="uid://bhgbr1eclf27y" path="res://assets/oauth2-ios.png" id="3_cm0pq"]
-[ext_resource type="Script" uid="uid://bedefk2midub6" path="res://addons/OAuth2Plugin/OAuth2.gd" id="4_cm0pq"]
-[ext_resource type="Script" uid="uid://ch285f4sp6k3g" path="res://addons/DeeplinkPlugin/Deeplink.gd" id="5_fos0i"]
+[ext_resource type="Script" uid="uid://c8s6necy0uyw8" path="res://addons/OAuth2Plugin/OAuth2.gd" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://0kj2ej3ipx6m" path="res://addons/DeeplinkPlugin/Deeplink.gd" id="5_fos0i"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_wt50o")
@@ -128,14 +128,12 @@ script = ExtResource("5_fos0i")
 scheme = "com.googleusercontent.apps.854928845060-441ot0moa19jlif3farnu2413u0o17hq"
 path_prefix = "/auth/callback"
 enabled_platforms = 1
-metadata/_custom_type_script = "uid://ch285f4sp6k3g"
 
 [node name="Deeplink_iOS" type="Node" parent="GoogleOAuth2"]
 script = ExtResource("5_fos0i")
 scheme = "com.googleusercontent.apps.854928845060-kjgra3jv1o8gbbf44jino23r95f26seu"
 path_prefix = "/oauth2redirect"
 enabled_platforms = 2
-metadata/_custom_type_script = "uid://ch285f4sp6k3g"
 
 [node name="DiscordOAuth2" type="Node" parent="."]
 script = ExtResource("4_cm0pq")
@@ -152,12 +150,10 @@ ios_client_secret = "PveoIfZAQc3sfndz1H23q5gSzMzlbWvo"
 ios_redirect_uri = "oauth2demo://auth/callback"
 ios_deeplink_path = NodePath("../GitHubOAuth2/Deeplink")
 _client_secret = ""
-metadata/_custom_type_script = "uid://bedefk2midub6"
 
 [node name="Deeplink" type="Node" parent="DiscordOAuth2"]
 script = ExtResource("5_fos0i")
 scheme = "oauth2demo"
-metadata/_custom_type_script = "uid://ch285f4sp6k3g"
 
 [node name="GitHubOAuth2" type="Node" parent="."]
 script = ExtResource("4_cm0pq")
@@ -175,12 +171,10 @@ ios_client_secret = "75d1ddad9ff5d4ab4a25f02646f158b3d3bc6839"
 ios_redirect_uri = "oauth2demo://auth/callback"
 ios_deeplink_path = NodePath("Deeplink")
 _client_secret = ""
-metadata/_custom_type_script = "uid://bedefk2midub6"
 
 [node name="Deeplink" type="Node" parent="GitHubOAuth2"]
 script = ExtResource("5_fos0i")
 scheme = "oauth2demo"
-metadata/_custom_type_script = "uid://ch285f4sp6k3g"
 
 [connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/GoogleButton" to="." method="_on_google_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MainContainer/VBoxContainer/DiscordButton" to="." method="_on_discord_button_pressed"]

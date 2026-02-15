@@ -36,14 +36,17 @@ tasks {
 		dependsOn("cleanOutput")
 		finalizedBy("copyAssets")
 
+		inputs.file(rootProject.file("config/config.properties"))
+		inputs.file(rootProject.file("../ios/config/config.properties")).withPropertyName("iosConfig")
+
 		from(project.extra["templateDirectory"] as String)
 		into("${project.extra["outputDir"]}/addons/${project.extra["pluginName"]}")
 
 		include("**/*.gd")
 		include("**/*.cfg")
 
-		// First pass: explicit tokens
-		filter<ReplaceTokens>("tokens" to mapOf(
+		// Explicit tokens map
+		val explicitTokens = mapOf(
 			"pluginName" to (project.extra["pluginName"] as String),
 			"pluginNodeName" to (project.extra["pluginNodeName"] as String),
 			"pluginVersion" to (project.extra["pluginVersion"] as String),
@@ -65,9 +68,29 @@ tasks {
 				.map { it.trim() }
 				.filter { it.isNotBlank() }
 				.joinToString(", ") { "\"$it\"" }
-		))
+		)
 
-		// Second pass: generic replacement for leftover tokens (ie. extra.myProperty=...)
+		// Print file name before processing
+		eachFile {
+			println("[DEBUG] Processing file: ${relativePath}")
+		}
+
+		// First pass: replacement for explicit tokens
+		filter { line: String ->
+			var result = line
+
+			explicitTokens.forEach { (key, value) ->
+				val token = "@$key@"
+				if (result.contains(token)) {
+					println("  [DEBUG] Replacing token $token with: $value")
+					result = result.replace(token, value)
+				}
+			}
+
+			result
+		}
+
+		// Second pass: generic replacement for extra tokens (ie. extra.myProperty=...)
 		filter { line: String ->
 			var result = line
 
@@ -75,14 +98,18 @@ tasks {
 				val token = "@$key@"
 				if (result.contains(token)) {
 					val valueString = value.toString()
-					if (valueString.contains(",")) {
-						result = result.replace(token, valueString.split(",")
-							.map { it.trim() }
-							.filter { it.isNotBlank() }
-							.joinToString(", ") { "\"$it\"" })
-					} else {
-						result = result.replace(token, valueString)
-					}
+					val replacedValue =
+						if (valueString.contains(",")) {
+							valueString.split(",")
+								.map { it.trim() }
+								.filter { it.isNotBlank() }
+								.joinToString(", ") { "\"$it\"" }
+						} else {
+							valueString
+						}
+
+					println("  [DEBUG] Replacing token $token with: $replacedValue")
+					result = result.replace(token, replacedValue)
 				}
 			}
 

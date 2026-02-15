@@ -26,6 +26,8 @@ It supports popular OAuth providers via presets (Google, Apple, GitHub, Discord,
 ---
 
 ## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Table of Contents
+
+- [Demo](#demo)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
@@ -38,6 +40,18 @@ It supports popular OAuth providers via presets (Google, Apple, GitHub, Discord,
 - [All Plugins](#all-plugins)
 - [Credits](#credits)
 - [Contributing](#contributing)
+
+---
+
+<a name="demo"></a>
+
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Demo
+
+Try the **demo app** located in the `demo` directory.
+
+<p align="center">
+	<img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/docs/assets/demo_screenshot_ios_111.gif" width="252">
+</p>
 
 ---
 
@@ -99,7 +113,7 @@ Steps:
 
 ## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Dependencies
 
-**`Deeplink Plugin` version `5.2`**
+**`Deeplink Plugin` version `5.3`**
 
 The [Deeplink Plugin](https://github.com/godot-mobile-plugins/godot-deeplink) is required to receive OAuth redirect callbacks via custom URI schemes.
 
@@ -427,6 +441,7 @@ See Godot iOS Export Troubleshooting
 | [Connection State](https://github.com/godot-mobile-plugins/godot-connection-state) | ✅ | ✅ | ✅ | ✅ | MIT |
 | [OAuth 2.0](https://github.com/godot-mobile-plugins/godot-oauth2) | ✅ | ✅ | ✅ | ✅ | MIT |
 | [QR](https://github.com/godot-mobile-plugins/godot-qr) | ✅ | ✅ | ✅ | ✅ | MIT |
+| [Firebase](https://github.com/godot-mobile-plugins/godot-firebase) | ✅ | ✅ | ✅ | ✅ | MIT |
 
 ---
 

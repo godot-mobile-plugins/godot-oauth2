@@ -3,13 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07243F9E2EF3BCE7006D52C6 /* oauth2_plugin_bootstrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07243F9D2EF3BCE7006D52C6 /* oauth2_plugin_bootstrap.mm */; };
-		078173322EF018C10087ACA0 /* oauth2_logger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 078173312EF018C00087ACA0 /* oauth2_logger.mm */; };
-		90CAAA9924E71FF10013969F /* oauth2_plugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 90CAAA9824E71FF10013969F /* oauth2_plugin.mm */; };
+		07DF21842F3EE11600E2725C /* oauth2_plugin_bootstrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21812F3EE11600E2725C /* oauth2_plugin_bootstrap.mm */; };
+		07DF21852F3EE11600E2725C /* oauth2_logger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF217D2F3EE11600E2725C /* oauth2_logger.mm */; };
+		07DF21862F3EE11600E2725C /* oauth2_plugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF217F2F3EE11600E2725C /* oauth2_plugin.mm */; };
 		94A1B0B2910D06DA0F4D3D3C /* Pods_oauth2_plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 380C444E6383B0C8ACA7CA7D /* Pods_oauth2_plugin.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,19 +26,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07243F9C2EF3BCE7006D52C6 /* oauth2_plugin_bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauth2_plugin_bootstrap.h; sourceTree = "<group>"; };
-		07243F9D2EF3BCE7006D52C6 /* oauth2_plugin_bootstrap.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = oauth2_plugin_bootstrap.mm; sourceTree = "<group>"; };
-		073B52C32ECF241C0063663B /* oauth2_plugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "oauth2_plugin-Bridging-Header.h"; sourceTree = "<group>"; };
-		07787D0C2EDA6C22009B6F5F /* oauth2_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauth2_logger.h; sourceTree = "<group>"; };
-		078173312EF018C00087ACA0 /* oauth2_logger.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = oauth2_logger.mm; sourceTree = "<group>"; };
+		07DF217C2F3EE11600E2725C /* oauth2_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauth2_logger.h; sourceTree = "<group>"; };
+		07DF217D2F3EE11600E2725C /* oauth2_logger.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = oauth2_logger.mm; sourceTree = "<group>"; };
+		07DF217E2F3EE11600E2725C /* oauth2_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauth2_plugin.h; sourceTree = "<group>"; };
+		07DF217F2F3EE11600E2725C /* oauth2_plugin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = oauth2_plugin.mm; sourceTree = "<group>"; };
+		07DF21802F3EE11600E2725C /* oauth2_plugin_bootstrap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauth2_plugin_bootstrap.h; sourceTree = "<group>"; };
+		07DF21812F3EE11600E2725C /* oauth2_plugin_bootstrap.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = oauth2_plugin_bootstrap.mm; sourceTree = "<group>"; };
+		07DF21822F3EE11600E2725C /* oauth2_plugin-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "oauth2_plugin-Bridging-Header.h"; sourceTree = "<group>"; };
 		1A3D1E30D9DC57319C20B62B /* Pods-oauth2_plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oauth2_plugin.release.xcconfig"; path = "Target Support Files/Pods-oauth2_plugin/Pods-oauth2_plugin.release.xcconfig"; sourceTree = "<group>"; };
 		380C444E6383B0C8ACA7CA7D /* Pods_oauth2_plugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_oauth2_plugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		403D7C7BCFBA671DEF15AE95 /* Pods-oauth2_plugin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oauth2_plugin.debug.xcconfig"; path = "Target Support Files/Pods-oauth2_plugin/Pods-oauth2_plugin.debug.xcconfig"; sourceTree = "<group>"; };
 		90CAAA9424E71FF10013969F /* liboauth2_plugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liboauth2_plugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		90CAAA9724E71FF10013969F /* oauth2_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauth2_plugin.h; sourceTree = "<group>"; };
-		90CAAA9824E71FF10013969F /* oauth2_plugin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = oauth2_plugin.mm; sourceTree = "<group>"; };
-		AAE936A0178A8EA9BB753CEA /* Pods-oauth2_plugin_implementation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oauth2_plugin_implementation.debug.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-oauth2_plugin_implementation.debug.xcconfig"; sourceTree = "<group>"; };
-		D5F7A9D28867FD798F31BF3B /* Pods-oauth2_plugin_implementation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oauth2_plugin_implementation.release.xcconfig"; path = "Target Support Files/Pods-inapp_review_plugin/Pods-oauth2_plugin_implementation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,13 +51,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07DF21832F3EE11600E2725C /* src */ = {
+			isa = PBXGroup;
+			children = (
+				07DF217C2F3EE11600E2725C /* oauth2_logger.h */,
+				07DF217D2F3EE11600E2725C /* oauth2_logger.mm */,
+				07DF217E2F3EE11600E2725C /* oauth2_plugin.h */,
+				07DF217F2F3EE11600E2725C /* oauth2_plugin.mm */,
+				07DF21802F3EE11600E2725C /* oauth2_plugin_bootstrap.h */,
+				07DF21812F3EE11600E2725C /* oauth2_plugin_bootstrap.mm */,
+				07DF21822F3EE11600E2725C /* oauth2_plugin-Bridging-Header.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		66EA7AD27171A8F93A267403 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				403D7C7BCFBA671DEF15AE95 /* Pods-oauth2_plugin.debug.xcconfig */,
 				1A3D1E30D9DC57319C20B62B /* Pods-oauth2_plugin.release.xcconfig */,
-				AAE936A0178A8EA9BB753CEA /* Pods-oauth2_plugin_implementation.debug.xcconfig */,
-				D5F7A9D28867FD798F31BF3B /* Pods-oauth2_plugin_implementation.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -67,7 +77,7 @@
 		90CAAA8B24E71FF10013969F = {
 			isa = PBXGroup;
 			children = (
-				90CAAA9624E71FF10013969F /* oauth2 */,
+				07DF21832F3EE11600E2725C /* src */,
 				90CAAA9524E71FF10013969F /* Products */,
 				90CAAAA824E72A8A0013969F /* Frameworks */,
 				66EA7AD27171A8F93A267403 /* Pods */,
@@ -80,20 +90,6 @@
 				90CAAA9424E71FF10013969F /* liboauth2_plugin.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		90CAAA9624E71FF10013969F /* oauth2 */ = {
-			isa = PBXGroup;
-			children = (
-				07243F9C2EF3BCE7006D52C6 /* oauth2_plugin_bootstrap.h */,
-				07243F9D2EF3BCE7006D52C6 /* oauth2_plugin_bootstrap.mm */,
-				07787D0C2EDA6C22009B6F5F /* oauth2_logger.h */,
-				078173312EF018C00087ACA0 /* oauth2_logger.mm */,
-				073B52C32ECF241C0063663B /* oauth2_plugin-Bridging-Header.h */,
-				90CAAA9724E71FF10013969F /* oauth2_plugin.h */,
-				90CAAA9824E71FF10013969F /* oauth2_plugin.mm */,
-			);
-			path = oauth2;
 			sourceTree = "<group>";
 		};
 		90CAAAA824E72A8A0013969F /* Frameworks */ = {
@@ -188,9 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				078173322EF018C10087ACA0 /* oauth2_logger.mm in Sources */,
-				07243F9E2EF3BCE7006D52C6 /* oauth2_plugin_bootstrap.mm in Sources */,
-				90CAAA9924E71FF10013969F /* oauth2_plugin.mm in Sources */,
+				07DF21842F3EE11600E2725C /* oauth2_plugin_bootstrap.mm in Sources */,
+				07DF21852F3EE11600E2725C /* oauth2_logger.mm in Sources */,
+				07DF21862F3EE11600E2725C /* oauth2_plugin.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,9 +373,7 @@
 					"-isystem",
 					"$(SRCROOT)/godot/platform/ios",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "src/oauth2_plugin-Bridging-Header.h";
@@ -450,9 +444,7 @@
 					"-isystem",
 					"$(SRCROOT)/godot/platform/ios",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "src/oauth2_plugin-Bridging-Header.h";
