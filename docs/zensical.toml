@@ -1,0 +1,94 @@
+[project]
+site_name = "godot-oauth2 documentation"
+site_description = "A Godot plugin that provides a unified GDScript interface for OAuth 2.0 authentication flows on Android and iOS."
+site_author = "godot-sdk-integrations"
+copyright = "Copyright (c) 2025 Godot Engine Community SDK Integrations"
+site_url = "https://godot-mobile-plugins.github.io/godot-oauth2/"
+
+docs_dir  = "content"
+use_directory_urls = false
+edit_uri  = "edit/main/docs/content/"
+
+repo_name = "godot-oauth2"
+repo_url = "https://github.com/godot-sdk-integrations/godot-admob"
+
+# Navigation with explicit titles
+nav = [
+    { "Home" = "index.md" },
+    { "Getting Started" = [
+        { "Installation" = "getting-started/installation.md" },
+        { "Quick Start" = "getting-started/quick-start.md" }
+    ]},
+    { "API" = [
+        { "Signals" = "api/signals.md" },
+        { "Methods" = "api/methods.md" },
+        { "Classes" = "api/classes.md" }
+    ]},
+    { "Providers" = [
+        { "Overview" = "providers/overview.md" },
+        { "Google" = "providers/google.md" },
+        { "Apple" = "providers/apple.md" },
+        { "Discord" = "providers/discord.md" },
+        { "Github" = "providers/github.md" },
+        { "Custom" = "providers/custom.md" }
+    ]},
+    { "Troubleshooting" = [
+        { "Android" = "troubleshooting/android.md" },
+        { "iOS" = "troubleshooting/ios.md" }
+    ]},
+  { "Contributing" = [
+      { "Overview" = "contributing/index.md" },
+      { "Prerequisites" = "contributing/prerequisites.md" },
+      { "Configuration" = "contributing/configuration.md" },
+      { "Development Workflow" = "contributing/development-workflow.md" },
+      { "Building" = "contributing/building.md" },
+      { "Testing" = "contributing/testing.md" },
+      { "Releases" = "contributing/releases.md" },
+      { "Installation" = "contributing/installation.md" },
+      { "Troubleshooting" = "contributing/troubleshooting.md" },
+      { "Guidelines" = "contributing/guidelines.md" }
+    ]},
+    { "Links" = "links.md" }
+]
+
+[project.theme]
+language = "en"
+favicon = "/images/icon.png"
+logo = "https://godotengine.org/assets/press/icon_color.svg"
+features = [
+    "content.code.copy",
+    "navigation.footer",
+    "navigation.top",
+    "content.action.edit",
+    "content.action.view",
+    "search.highlight"
+]
+
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+media = "(prefers-color-scheme: light)"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+media = "(prefers-color-scheme: dark)"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.tables]
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.snippets]
+[project.markdown_extensions.pymdownx.superfences]
+
+[project.markdown_extensions.toc]
+toc_depth = 0
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true

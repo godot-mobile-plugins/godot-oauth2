@@ -49,3 +49,6 @@ project.xcworkspace/
 
 # macOS
 .DS_Store
+
+# documentation
+site
