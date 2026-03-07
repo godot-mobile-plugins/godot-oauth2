@@ -39,7 +39,10 @@ body:
       description: >-
         Please ensure your report fulfills the following:
       options:
-        - label: I have reviewed the documentation guidelines.
+        - label: I have searched the existing open and closed issues
+          required: true
+        - label: I have searched the existing discussions
           required: true
         - label: I have attached links or screenshots for affected sections.
           required: true
+        
