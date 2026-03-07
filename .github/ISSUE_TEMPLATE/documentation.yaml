@@ -1,0 +1,42 @@
+name: "📚 Report a documentation issue"
+description: "Missing information in our docs? Report a documentation issue"
+title: "📚 "
+type: documentation
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: >-
+        Please describe the inconsistency or issue you have found in [our documentation](https://godot-mobile-plugins.github.io/godot-oauth2/)
+        or indicate where there is a need for improvement. Additionally, explain the severity of the issue, i.e., its impact on you and potentially other users.
+      validations:
+        required: true
+
+  - type: textarea
+    id: related-links
+    attributes:
+      label: Related links
+      description: >-
+        Please list all links to the sections of [our documentation](https://godot-mobile-plugins.github.io/godot-oauth2/)
+        that are impacted by the issue you described above. If applicable, add screenshots. 
+        Additionally, list links to possibly related open and closed [issues](https://github.com/godot-mobile-plugins/godot-oauth2/issues).
+
+  - type: textarea
+    id: proposed-change
+    attributes:
+      label: Proposed change
+      description: >-
+        This field is optional. You may provide an improvement proposal for our documentation by describing your suggestion here.
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Before submitting
+      description: >-
+        Please ensure your documentation issue report fulfills all of the following requirements:
+      options:
+        - label: I have searched the existing open and closed issues.
+          required: true
+        - label: I have searched the existing discussions.
+          required: true
