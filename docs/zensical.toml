@@ -1,8 +1,8 @@
 [project]
 site_name = "godot-oauth2 documentation"
 site_description = "A Godot plugin that provides a unified GDScript interface for OAuth 2.0 authentication flows on Android and iOS."
-site_author = "godot-sdk-integrations"
-copyright = "Copyright (c) 2025 Godot Engine Community SDK Integrations"
+site_author = "godot-mobile-plugins"
+copyright = " Copyright (c) 2025 Godot Mobile Plugins"
 site_url = "https://godot-mobile-plugins.github.io/godot-oauth2/"
 
 docs_dir  = "content"
@@ -10,9 +10,8 @@ use_directory_urls = false
 edit_uri  = "edit/main/docs/content/"
 
 repo_name = "godot-oauth2"
-repo_url = "https://github.com/godot-sdk-integrations/godot-admob"
+repo_url = "https://github.com/godot-mobile-plugins/godot-oauth2"
 
-# Navigation with explicit titles
 nav = [
     { "Home" = "index.md" },
     { "Getting Started" = [
@@ -30,6 +29,7 @@ nav = [
         { "Apple" = "providers/apple.md" },
         { "Discord" = "providers/discord.md" },
         { "Github" = "providers/github.md" },
+        { "Auth0" = "providers/auth0.md" },
         { "Custom" = "providers/custom.md" }
     ]},
     { "Troubleshooting" = [
