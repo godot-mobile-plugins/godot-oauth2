@@ -1,0 +1,26 @@
+---
+title: Installation
+icon: fontawesome/solid/download
+---
+
+# <img src="../images/icon.png" width="24"> Installation
+
+## <img src="../images/icon.png" width="20"> Installing to Demo App
+
+```bash
+# Install both platforms
+./script/build.sh -D
+
+# Uninstall
+./script/build.sh -d
+```
+
+## <img src="../images/icon.png" width="20"> Installing to Your Project
+
+```bash
+# Using install script
+./script/install.sh -t /path/to/your/project -z /path/to/OAuth2Plugin-*.zip
+
+# Example
+./script/install.sh -t ~/MyGame -z release/OAuth2Plugin-Multi-v6.0.zip
+```
