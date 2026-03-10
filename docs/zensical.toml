@@ -53,7 +53,7 @@ nav = [
 
 [project.theme]
 language = "en"
-favicon = "/images/icon.png"
+favicon = "images/icon.png"
 logo = "https://godotengine.org/assets/press/icon_color.svg"
 features = [
     "content.code.copy",
