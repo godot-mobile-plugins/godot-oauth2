@@ -1,10 +1,17 @@
 <p align="center">
-	<img width="256" height="256" src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/demo/assets/oauth2-android.png">
+	<img width="128" height="128" src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/demo/assets/oauth2-android.png">
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<img width="256" height="256" src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/demo/assets/oauth2-ios.png">
+	<img width="128" height="128" src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/demo/assets/oauth2-ios.png">
 </p>
 
----
+<div align="center">
+	<a href="https://github.com/godot-mobile-plugins/godot-oauth2"><img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-oauth2?label=Stars&style=plastic" height="32"/></a>
+	<img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-oauth2?label=Latest%20Release&style=plastic" height="32"/>
+	<img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-oauth2/latest/total?label=Downloads&style=plastic" height="32"/>
+	<img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-oauth2/total?label=Total%20Downloads&style=plastic" height="32"/>
+</div>
+
+<br>
 
 # <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> Godot OAuth 2.0 Plugin
 
@@ -23,26 +30,6 @@ It supports popular OAuth providers via presets (Google, Apple, GitHub, Discord,
 - Session-based token management
 - Editor-friendly configuration via exported properties
 
----
-
-## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Table of Contents
-
-- [Demo](#demo)
-- [Installation](#installation)
-- [Dependencies](#dependencies)
-- [Usage](#usage)
-- [Signals](#signals)
-- [Methods](#methods)
-- [Classes](#classes)
-- [Providers](#providers)
-- [Platform-Specific Notes](#platform-specific-notes)
-- [Links](#links)
-- [All Plugins](#all-plugins)
-- [Credits](#credits)
-- [Contributing](#contributing)
-
----
-
 <a name="demo"></a>
 
 ## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Demo
@@ -50,78 +37,33 @@ It supports popular OAuth providers via presets (Google, Apple, GitHub, Discord,
 Try the **demo app** located in the `demo` directory.
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/docs/assets/demo_screenshot_ios_111.gif" width="252">
+	<img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/docs/assets/demo_screenshot_ios_111.png" width="252">
 </p>
-
----
 
 <a name="installation"></a>
 
 ## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Installation
 
-Before installing this plugin, make sure to uninstall any previous versions of the same plugin.
+> **Before installing:** uninstall any previous version of this plugin. If installing both Android and iOS versions in the same project, ensure both use the same addon interface version.
 
-_If installing both Android and iOS versions of the plugin in the same project, then make sure that both versions use the same addon interface version._
+**Via AssetLib (recommended)**
+1. Search for `OAuth` in the Godot Editor's AssetLib and click **Download**. (AssetLib Links: [Android](https://godotengine.org/asset-library/asset/4601), [iOS](https://godotengine.org/asset-library/asset/4602))
+2. In the install dialog, keep the default install folder (project root) and **Ignore asset root** checked, then click **Install**.
+3. Enable the plugin under **Project → Project Settings → Plugins**.
 
-There are 2 ways to install the OAuth2 plugin into your project:
+> If the installer warns about conflicting files when adding a second platform, you can safely ignore it — both platforms share the same addon code.
 
-- Through the Godot Editor's AssetLib
-- Manually by downloading archives from GitHub
+**Manually**
+1. Download the release archive from [GitHub](https://github.com/godot-mobile-plugins/godot-oauth2/releases) and unzip it into your project's root directory.
+2. Enable the plugin under **Project → Project Settings → Plugins**.
 
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="18"> Installing via AssetLib
+**Dependencies**
 
-Steps:
+Depends on the [Deeplink Plugin](https://github.com/godot-mobile-plugins/godot-deeplink), which is required to receive OAuth redirect callbacks via custom URI schemes.
 
-- Search for and select the OAuth2 plugin in the Godot Editor
+<a name="quick-start"></a>
 
-- Click the Download button
-
-On the installation dialog:
-
-- Keep Change Install Folder pointing to your project root
-
-- Keep Ignore asset root checked
-
-- Click Install
-
-- Enable the plugin via `Project --> Project Settings… --> Plugins`
-
-- _For iOS, also enable the plugin in the export settings._
-
-#### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Installing both Android and iOS versions
-
-When installing via AssetLib, the installer may warn that some files conflict.
-This is expected and can be safely ignored, as both versions share the same addon code.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="18"> Installing manually
-
-Steps:
-
-- Download the release archive from GitHub
-
-- Unzip the archive
-
-- Copy the contents into your Godot project root
-
-- Enable the plugin via `Project --> Project Settings… --> Plugins`
-
-- _For iOS, also enable the plugin in the export settings._
-
----
-
-<a name="dependencies"></a>
-
-## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Dependencies
-
-**`Deeplink Plugin` version `5.3`**
-
-The [Deeplink Plugin](https://github.com/godot-mobile-plugins/godot-deeplink) is required to receive OAuth redirect callbacks via custom URI schemes.
-
----
-
-<a name="usage"></a>
-
-## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Usage
+## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Quick Start
 
 - Add an `OAuth2` node to your main scene or to an autoload/global scene.
 
@@ -166,284 +108,36 @@ func _on_auth_cancelled():
 	print("Authentication cancelled")
 ```
 
----
+<br>
 
-<a name="signals"></a>
+<a name="documentation"></a>
 
-## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Signals
+# <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> Documentation
 
-Register listeners to the following signals of the OAuth2 node:
+Explore the plugin documentation for a deep dive into features:
 
-- `auth_started`
-Emitted when the authentication flow begins.
+- [https://godot-mobile-plugins.github.io/godot-oauth2](https://godot-mobile-plugins.github.io/godot-oauth2/)
 
-- `auth_success(token_data: Dictionary)`
-Emitted when authentication completes successfully.
-
-- `auth_error(error_msg: String)`
-Emitted when an authentication or token exchange error occurs.
-
-- `auth_cancelled`
-Emitted when the user cancels the authentication flow.
-
----
-
-<a name="methods"></a>
-
-## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Methods
-
-- `authorize() -> void`
-Starts the OAuth 2.0 authorization flow.
-
-- `save_session(token_data: Dictionary, session_id: String) -> void`
-Manually saves a session when automatic saving is not possible.
-
-- `get_stored_token() -> String`
-Returns the access token for the first active session.
-
-- `get_stored_token_for(provider, session_id) -> String`
-Retrieves a stored access token for a specific provider and session.
-
-- `clear_tokens() -> void`
-Removes all stored tokens for the current provider.
-
-- `get_all_active_sessions() -> Array`
-Returns all active sessions across all providers.
-
-- `get_active_sessions(provider) -> Array`
-Returns active sessions for a specific provider.
-
-- `remove_all_active_sessions() -> void`
-Clears all stored sessions.
-
-- `remove_active_sessions(provider) -> void`
-Clears all sessions for a specific provider.
-
----
-
-<a name="classes"></a>
-
-## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Classes
-
-This section documents the GDScript interface classes implemented and exposed by the plugin.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> OAuth2
-
-Main node that manages OAuth authorization flows, token exchange, and session storage.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> OAuth2Config
-
-Provides provider presets and configuration helpers for OAuth2 providers.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> ProviderConfig
-
-Encapsulates configuration for OAuth2 providers.
-
----
-
-<a name="providers"></a>
-
-## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Providers
-
-The plugin includes built-in presets for common OAuth 2.0 providers as well as a fully Custom provider option.
-Each provider requires creating an OAuth2 client in the provider’s developer console and configuring redirect URIs correctly.
-
-**Important**:
-Redirect URIs must exactly match what is configured in the provider dashboard, including scheme, host, path, and trailing slashes.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Google
-
-Console:
-https://console.cloud.google.com/apis/credentials
-
-Steps:
-
-- Create or select a Google Cloud project.
-- Go to APIs & Services --> Credentials.
-- Create an OAuth Client ID.
-- Choose Android, iOS, or Web depending on your setup.
-- Copy the Client ID (Client Secret is optional and usually not required for mobile).
-- Add your redirect URI (custom scheme or HTTPS).
-
-Notes:
-
-- Supports PKCE (enabled by default).
-- Offline access and refresh tokens are supported.
-
-Default scopes: openid, profile, email.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Apple
-
-Console:
-https://developer.apple.com/account/resources/identifiers/list
-
-Steps:
-
-- Create an App ID and enable Sign in with Apple.
-- Create a Service ID for OAuth.
-- Configure Return URLs.
-- Generate a Client ID (Service ID identifier).
-- (Optional) Generate a Client Secret using a private key.
-
-**Important Apple Limitation**:
-
-- Apple does NOT support custom URI schemes (e.g. mygame://callback).
-- Redirect URIs must be HTTPS.
-- The domain must be verified with Apple.
-- This usually requires a backend relay that redirects back into the app.
-
-Notes:
-
-- PKCE is disabled for Apple.
-- Apple often returns data via form_post.
-
-Requires additional backend setup for most mobile games.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Discord
-
-Console:
-https://discord.com/developers/applications
-
-Steps:
-
-- Create a new application.
-- Open OAuth2 --> General.
-- Copy the Client ID.
-- (Optional) Copy the Client Secret.
-- Add your redirect URI.
-
-Notes:
-
-- Supports custom URI schemes.
-- PKCE is enabled.
-
-Default scopes: identify, email.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> GitHub
-
-Console:
-https://github.com/settings/developers
-
-Steps:
-
-- Create a New OAuth App.
-- Set application name and homepage URL.
-- Set Authorization callback URL (redirect URI).
-- Copy Client ID and Client Secret.
-
-Notes:
-
-- PKCE is optional (disabled by default).
-- Custom URI schemes are supported.
-
-Default scopes: read:user, user:email.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Auth0
-
-Console:
-https://manage.auth0.com/
-
-Steps:
-
-- Create a new Application.
-- Choose Native application type.
-- Copy Client ID (Client Secret optional).
-- Set Allowed Callback URLs.
-- Configure your Auth0 domain (e.g. my-tenant.auth0.com).
-
-Notes:
-
-- Requires setting the Provider Domain in the plugin.
-- Supports PKCE (enabled).
-
-Default scopes: openid, profile, email, offline_access.
-
-### <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="16"> Custom
-
-Use this option for any OAuth 2.0 compliant provider not listed above.
-
-You must manually provide:
-
-- Authorization endpoint
-- Token endpoint
-- Scopes
-- Optional PKCE setting
-- Optional extra parameters
-
-Steps:
-
-- Create an OAuth2 client in your provider’s dashboard.
-- Copy Client ID (and Client Secret if required).
-- Register your redirect URI.
-- Enter endpoints and scopes in the plugin inspector.
-
-Notes:
-
-- PKCE is strongly recommended for public clients.
-- Some providers require additional parameters (audience, resource, etc.).
-
----
-
-<a name="platform-specific-notes"></a>
-
-## <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> Platform-Specific Notes
-### Android
-
-Download Android export templates
-
-Enable Gradle Build in export settings
-
-Ensure your redirect URI scheme is registered correctly
-
-**Troubleshooting**:
-
-- Logs:
-`adb logcat | grep 'godot'` (Linux/macOS)
-`adb.exe logcat | select-string "godot"` (Windows)
-
-Useful resources:
-
-- https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html
-- https://developer.android.com/tools/adb
-- https://developer.android.com/studio/debug
-- https://developer.android.com/courses
-
-### iOS
-Follow Exporting for iOS
-
-View Xcode logs while running the app
-
-Ensure URL schemes are correctly registered
-
-See Godot iOS Export Troubleshooting
-
-<a name="links"></a>
-
-# <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> Links
-
-- [AssetLib Entry Android](https://godotengine.org/asset-library/asset/4601)
-- [AssetLib Entry iOS](https://godotengine.org/asset-library/asset/4602)
-
----
+<br>
 
 <a name="all-plugins"></a>
 
 # <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> All Plugins
 
-| Plugin | Android | iOS | Free | Open Source | License |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| [Admob](https://github.com/godot-sdk-integrations/godot-admob) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [Notification Scheduler](https://github.com/godot-mobile-plugins/godot-notification-scheduler) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [Deeplink](https://github.com/godot-mobile-plugins/godot-deeplink) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [Share](https://github.com/godot-mobile-plugins/godot-share) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [In-App Review](https://github.com/godot-mobile-plugins/godot-inapp-review) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [Native Camera](https://github.com/godot-mobile-plugins/godot-native-camera) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [Connection State](https://github.com/godot-mobile-plugins/godot-connection-state) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [OAuth 2.0](https://github.com/godot-mobile-plugins/godot-oauth2) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [QR](https://github.com/godot-mobile-plugins/godot-qr) | ✅ | ✅ | ✅ | ✅ | MIT |
-| [Firebase](https://github.com/godot-mobile-plugins/godot-firebase) | ✅ | ✅ | ✅ | ✅ | MIT |
+| ✦ | Plugin | Android | iOS | Latest Release | Downloads | Stars |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: |
+| <img src="https://raw.githubusercontent.com/godot-sdk-integrations/godot-admob/main/addon/src/icon.png" width="20"> | [Admob](https://github.com/godot-sdk-integrations/godot-admob) | ✅ | ✅ | <a href="https://github.com/godot-sdk-integrations/godot-admob/releases"><img src="https://img.shields.io/github/release-date/godot-sdk-integrations/godot-admob?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-sdk-integrations/godot-admob?label=%20" /></a> | <img src="https://img.shields.io/github/downloads/godot-sdk-integrations/godot-admob/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-sdk-integrations/godot-admob/total?label=total" /> | <img src="https://img.shields.io/github/stars/godot-sdk-integrations/godot-admob?style=plastic&label=%20" /> |
+| <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-connection-state/main/addon/src/icon.png" width="20"> | [Connection State](https://github.com/godot-mobile-plugins/godot-connection-state) | ✅ | ✅ | <a href="https://github.com/godot-mobile-plugins/godot-connection-state/releases"><img src="https://img.shields.io/github/release-date/godot-mobile-plugins/godot-connection-state?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-connection-state?label=%20" /></a> | <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-connection-state/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-connection-state/total?label=total" /> | <img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-connection-state?style=plastic&label=%20" /> |
+| <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-deeplink/main/addon/src/icon.png" width="20"> | [Deeplink](https://github.com/godot-mobile-plugins/godot-deeplink) | ✅ | ✅ | <a href="https://github.com/godot-mobile-plugins/godot-deeplink/releases"><img src="https://img.shields.io/github/release-date/godot-mobile-plugins/godot-deeplink?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-deeplink?label=%20" /></a> | <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-deeplink/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-deeplink/total?label=total" /> | <img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-deeplink?style=plastic&label=%20" /> |
+| <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-firebase/main/addon/src/icon.png" width="20"> | [Firebase](https://github.com/godot-mobile-plugins/godot-firebase) | ✅ | ✅ | - <!-- <a href="https://github.com/godot-mobile-plugins/godot-firebase/releases"><img src="https://img.shields.io/github/release-date/godot-mobile-plugins/godot-firebase?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-firebase?label=%20" /></a> --> | - <!-- <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-firebase/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-firebase/total?label=%20" /> --> | <img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-firebase?style=plastic&label=%20" /> |
+| <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-inapp-review/main/addon/src/icon.png" width="20"> | [In-App Review](https://github.com/godot-mobile-plugins/godot-inapp-review) | ✅ | ✅ | <a href="https://github.com/godot-mobile-plugins/godot-inapp-review/releases"><img src="https://img.shields.io/github/release-date/godot-mobile-plugins/godot-inapp-review?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-inapp-review?label=%20" /></a> | <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-inapp-review/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-inapp-review/total?label=total" /> | <img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-inapp-review?style=plastic&label=%20" /> |
+| <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-native-camera/main/addon/src/icon.png" width="20"> | [Native Camera](https://github.com/godot-mobile-plugins/godot-native-camera) | ✅ | ✅ | <a href="https://github.com/godot-mobile-plugins/godot-native-camera/releases"><img src="https://img.shields.io/github/release-date/godot-mobile-plugins/godot-native-camera?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-native-camera?label=%20" /></a> | <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-native-camera/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-native-camera/total?label=total" /> | <img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-native-camera?style=plastic&label=%20" /> |
+| <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-notification-scheduler/main/addon/src/icon.png" width="20"> | [Notification Scheduler](https://github.com/godot-mobile-plugins/godot-notification-scheduler) | ✅ | ✅ | <a href="https://github.com/godot-mobile-plugins/godot-notification-scheduler/releases"><img src="https://img.shields.io/github/release-date/godot-mobile-plugins/godot-notification-scheduler?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-notification-scheduler?label=%20" /></a> | <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-notification-scheduler/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-notification-scheduler/total?label=total" /> | <img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-notification-scheduler?style=plastic&label=%20" /> |
+| <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="20"> | [OAuth 2.0](https://github.com/godot-mobile-plugins/godot-oauth2) | ✅ | ✅ | <a href="https://github.com/godot-mobile-plugins/godot-oauth2/releases"><img src="https://img.shields.io/github/release-date/godot-mobile-plugins/godot-oauth2?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-oauth2?label=%20" /></a> | <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-oauth2/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-oauth2/total?label=total" /> | <img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-oauth2?style=plastic&label=%20" /> |
+| <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-qr/main/addon/src/icon.png" width="20"> | [QR](https://github.com/godot-mobile-plugins/godot-qr) | ✅ | ✅ | <a href="https://github.com/godot-mobile-plugins/godot-qr/releases"><img src="https://img.shields.io/github/release-date/godot-mobile-plugins/godot-qr?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-qr?label=%20" /></a> | <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-qr/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-qr/total?label=total" /> | <img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-qr?style=plastic&label=%20" /> |
+| <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-share/main/addon/src/icon.png" width="20"> | [Share](https://github.com/godot-mobile-plugins/godot-share) | ✅ | ✅ | <a href="https://github.com/godot-mobile-plugins/godot-share/releases"><img src="https://img.shields.io/github/release-date/godot-mobile-plugins/godot-share?label=%20" /> <img src="https://img.shields.io/github/v/release/godot-mobile-plugins/godot-share?label=%20" /></a> | <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-share/latest/total?label=latest" /> <img src="https://img.shields.io/github/downloads/godot-mobile-plugins/godot-share/total?label=total" /> | <img src="https://img.shields.io/github/stars/godot-mobile-plugins/godot-share?style=plastic&label=%20" /> |
 
----
+<br>
 
 <a name="credits"></a>
 
@@ -451,14 +145,30 @@ See Godot iOS Export Troubleshooting
 
 Developed by [Cengiz](https://github.com/cengiz-pz)
 
-Based on [Godot Mobile Plugin Template](https://github.com/godot-mobile-plugins/godot-plugin-template)
+Based on [Godot Mobile Plugin Template v2](https://github.com/godot-mobile-plugins/godot-plugin-template/tree/v2)
 
 Original repository: [Godot OAuth 2.0 Plugin](https://github.com/godot-mobile-plugins/godot-oauth2)
 
----
+<br>
 
 <a name="contributing"></a>
 
 # <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="24"> Contributing
 
-See [the contribution guide](https://github.com/godot-mobile-plugins/godot-oauth2?tab=contributing-ov-file) if you would like to contribute to this project.
+See [our guide](https://godot-mobile-plugins.github.io/godot-oauth2/contributing/) if you would like to contribute to this project.
+
+<br>
+
+# 💖 Support the Project
+
+If this plugin has helped you, consider supporting its development! Every bit of support helps keep the plugin updated and bug-free.
+
+| ✦ | Ways to Help | How to do it |
+| :--- | :--- | :--- |
+|✨⭐| **Spread the Word** | [Star this repo](https://github.com/godot-mobile-plugins/godot-oauth2/stargazers) to help others find it. |
+|💡✨| **Give Feedback** | [Open an issue](https://github.com/godot-mobile-plugins/godot-oauth2/issues) or [suggest a feature](https://github.com/godot-mobile-plugins/godot-oauth2/issues/new). |
+|🧩| **Contribute** | [Submit a PR](https://github.com/godot-mobile-plugins/godot-oauth2?tab=contributing-ov-file) to help improve the codebase. |
+|❤️| **Buy a Coffee** | Support the maintainers on GitHub Sponsors or other platforms. |
+
+## ⭐ Star History
+[![Star History Chart](https://api.star-history.com/svg?repos=godot-mobile-plugins/godot-oauth2&type=Date)](https://star-history.com/#godot-mobile-plugins/godot-oauth2&Date)
