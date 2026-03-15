@@ -145,7 +145,7 @@ Explore the plugin documentation for a deep dive into features:
 
 Developed by [Cengiz](https://github.com/cengiz-pz)
 
-Based on [Godot Mobile Plugin Template v2](https://github.com/godot-mobile-plugins/godot-plugin-template/tree/v2)
+Based on [Godot Mobile Plugin Template v5](https://github.com/godot-mobile-plugins/godot-plugin-template/tree/v5)
 
 Original repository: [Godot OAuth 2.0 Plugin](https://github.com/godot-mobile-plugins/godot-oauth2)
 

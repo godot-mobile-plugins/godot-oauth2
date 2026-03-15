@@ -44,11 +44,15 @@ Sample `local.properties` on Unix-like command-line:
 sdk.dir=/usr/lib/android-sdk
 ```
 
+Optionally, set `godot.dir` to use a Godot source tree at a custom location instead of the default `ios/godot/`:
+```properties
+godot.dir=/path/to/your/shared/godot
+```
+
 ## iOS Development (macOS only)
 
 - **Xcode** - Latest stable version recommended
 - **Xcode Command Line Tools** - Install via: `xcode-select --install`
-- **CocoaPods** - Install via: `sudo gem install cocoapods`
 - **SCons** - Install via: `pip3 install scons` or `brew install scons`
 - **Python 3** - Required for SCons
 
@@ -60,6 +64,5 @@ java -version
 
 # macOS/iOS only
 xcodebuild -version
-pod --version
 scons --version
 ```

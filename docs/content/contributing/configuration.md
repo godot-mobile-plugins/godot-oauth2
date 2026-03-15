@@ -21,8 +21,8 @@ The build files are largely static and shared across all GMP plugins. Any plugin
 │       └── libs.versions.toml         # Android dependencies and versions
 │
 └── ios/
-	└── config/
-		└── config.properties          # iOS configuration
+    └── config/
+        └── config.properties          # iOS configuration
 ```
 
 ## <img src="../images/icon.png" width="20"> Common Configuration
@@ -70,9 +70,11 @@ android-library = { id = "com.android.library", version.ref = "android-plugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ```
 
-## <img src="../images/icon.png" width="20"> Android SDK Configuration
+## <img src="../images/icon.png" width="20"> Local Configuration
 
-Create `common/local.properties` to specify your Android SDK location:
+Create `common/local.properties` to configure machine-specific paths. This file is gitignored and must be created locally.
+
+### Android SDK Location
 
 ```properties
 # Windows
@@ -84,8 +86,30 @@ sdk.dir=/Users/YourUsername/Library/Android/sdk
 # Linux (alternate)
 sdk.dir=/usr/lib/android-sdk
 ```
-!!! note
-    This file is gitignored and must be created locally.
+
+### Godot Directory (iOS — optional)
+
+By default, the iOS build scripts download and use the Godot source from `ios/godot/` inside the project. If you want to use a Godot source tree located elsewhere on your machine (e.g. to share it across multiple plugin projects), set `godot.dir` in `local.properties`:
+
+```properties
+# Use a shared Godot source directory outside the project
+godot.dir=/path/to/your/shared/godot
+```
+
+When `godot.dir` is not set, the build uses the `ios/godot/` directory. The path supports `~` and environment variable expansion.
+
+### Godot Android Library (AAR — optional)
+
+By default, the Godot Android AAR libary file is expected to be placed inside `android/libs/` directory inside the project. If you want to use a location elsewhere on your machine (e.g. to share it across multiple plugin projects), set `lib.dir` in `local.properties`:
+
+```properties
+# Use a shared Godot AAR library directory outside the project
+lib.dir=/path/to/your/shared/aar
+```
+
+When `lib.dir` is not set, the build uses the `android/libs/` directory. The path supports `~` and environment variable expansion.
+
+**Note:** The specified directory must contain a valid `GODOT_VERSION` file matching the `godotVersion` property in `common/config/config.properties`. If you use the `-G` option to download Godot, it will be downloaded to whichever directory is configured and the `GODOT_VERSION` file will be created automatically.
 
 ## <img src="../images/icon.png" width="20"> iOS Configuration
 
@@ -103,7 +127,34 @@ embedded_frameworks=res://ios/framework/*.xcframework,...
 
 # Linker flags
 flags=-ObjC,-Wl,...
+```
 
-# Pod dependencies
-dependencies=Dependency-SDK:1.0.0
+SPM dependencies are configured in the `ios/config/spm_dependencies.json` file in the following format:
+
+```json
+[
+  {
+    "url": "https://github.com/Alamofire/Alamofire",
+    "version": "5.8.1",
+    "products": [
+      "Alamofire",
+      "AlamofireImage"
+    ]
+  },
+  {
+    "url": "https://github.com/kishikawakatsumi/KeychainAccess",
+    "version": "4.2.2",
+    "products": [
+      "KeychainAccess"
+    ]
+  }
+]
+```
+
+If the plugin has no SPM dependencies:
+
+```json
+[
+
+]
 ```

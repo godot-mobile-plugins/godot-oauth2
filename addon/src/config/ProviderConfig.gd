@@ -11,10 +11,7 @@ const SCOPES_PROPERTY: String = "scopes"
 const PKCE_ENABLED_PROPERTY: String = "pkce_enabled"
 const PARAMS_PROPERTY: String = "params"
 
-const DEFAULT_DATA: Dictionary = {
-	SCOPES_PROPERTY: [],
-	PARAMS_PROPERTY: {}
-}
+const DEFAULT_DATA: Dictionary = {SCOPES_PROPERTY: [], PARAMS_PROPERTY: {}}
 
 var _data: Dictionary
 
@@ -27,8 +24,11 @@ func get_auth_endpoint() -> String:
 	if not _data.has(AUTH_ENDPOINT_PROPERTY):
 		return ""
 
-	return _data[AUTH_ENDPOINT_PROPERTY] if not _data.has(DOMAIN_PROPERTY) \
-			else _data[AUTH_ENDPOINT_PROPERTY] % _data[DOMAIN_PROPERTY]
+	return (
+		_data[AUTH_ENDPOINT_PROPERTY]
+		if not _data.has(DOMAIN_PROPERTY)
+		else _data[AUTH_ENDPOINT_PROPERTY] % _data[DOMAIN_PROPERTY]
+	)
 
 
 func set_auth_endpoint(a_auth_endpoint: String) -> void:
@@ -39,8 +39,11 @@ func get_token_endpoint() -> String:
 	if not _data.has(TOKEN_ENDPOINT_PROPERTY):
 		return ""
 
-	return _data[TOKEN_ENDPOINT_PROPERTY] if not _data.has(DOMAIN_PROPERTY) \
-			else _data[TOKEN_ENDPOINT_PROPERTY] % _data[DOMAIN_PROPERTY]
+	return (
+		_data[TOKEN_ENDPOINT_PROPERTY]
+		if not _data.has(DOMAIN_PROPERTY)
+		else _data[TOKEN_ENDPOINT_PROPERTY] % _data[DOMAIN_PROPERTY]
+	)
 
 
 func set_token_endpoint(a_token_endpoint: String) -> void:

@@ -5,76 +5,89 @@ icon: fontawesome/solid/hammer
 
 # <img src="../images/icon.png" width="24"> Building
 
-## <img src="../images/icon.png" width="20"> Android Builds
+There are three main build scripts located in the `script` directory.
 
-### Quick Reference
+- `build.sh` - the main build script
+- `build_android.sh` - build script for Android platform
+- `build_ios.sh` - build script for iOS platform
 
-```bash
-# Clean and build debug
-./script/build.sh -ca
+### <img src="../images/icon.png" width="20"> Cross-Platform Builds
 
-# Clean and build release
-./script/build.sh -car
+Cross-platform builds with the `build.sh` script.
 
-# Create release archive
-./script/build.sh -carz
-
-# Build specific Gradle task
-./script/run_gradle_task.sh buildDebug
-./script/run_gradle_task.sh buildRelease
-./script/run_gradle_task.sh createArchive
-```
-
-### Build Options
+#### Build Options
 
 | Option | Description |
 |--------|-------------|
-| `-a` | Build plugin for Android platform |
-| `-A` | Build and create Android release archive |
-| `-c` | Remove existing Android build |
-| `-r` | Use release build variant |
-| `-z` | Create Android zip archive |
+| `-a` | Build plugin for Android platform (`-a -- -h` for all options) |
+| `-i` | Build plugin for iOS platform (`-i -- -h` for all options) |
+| `-c` | Remove existing builds |
+| `-C` | Remove existing builds and archives |
+| `-d` | Uninstall plugin from demo app |
+| `-D` | Install plugin to demo app |
+| `-A` | Create Android relese archive |
+| `-I` | Create iOS relese archive |
+| `-M` | Create multi-platform relese archive |
+| `-R` | Create all relese archives |
 
-### Available Gradle Tasks
-
-```bash
-# Generate GDScript code only
-./script/run_gradle_task.sh generateGDScript
-
-# Copy assets
-./script/run_gradle_task.sh copyAssets
-
-# Build debug AAR
-./script/run_gradle_task.sh buildDebug
-
-# Build release AAR
-./script/run_gradle_task.sh buildRelease
-
-# Build both debug and release
-./script/run_gradle_task.sh build
-
-# Create release archive
-./script/run_gradle_task.sh createArchive
-
-# Install to demo app
-./script/run_gradle_task.sh installToDemo
-
-# Clean build
-./script/run_gradle_task.sh clean
-```
-
-### Output Locations
+#### Output Locations
 
 - **GDScript code:** `addon/build/output/`
 - **Debug AAR:** `android/build/outputs/aar/*-debug.aar`
 - **Release AAR:** `android/build/outputs/aar/*-release.aar`
 - **Built plugin:** `common/build/plugin/`
-- **Release archive:** `common/build/archive/OAuth2Plugin-Android-v*.zip`
+- **Release archive:** `release/OAuth2Plugin-*-v*.zip`
 
+### <img src="../images/icon.png" width="20"> Android Builds
 
-## <img src="../images/icon.png" width="20"> iOS Builds
+#### Quick Reference
 
-### Quick Reference
+```bash
+# Clean and build Android debug
+./script/build.sh -a -- -cb
+
+**Note:** Options after `--` are passed to `build_android.sh`
+
+# Clean and build Android release
+./script/build.sh -a -- -cbr
+
+# Install Android plugin to demo app
+./script/build_android.sh -D
+
+# Uninstall Android plugin from demo app
+./script/build_android.sh -d
+
+# Create Android release archive
+./script/build_android.sh -R
+```
+
+#### Build Options
+
+| Option | Description |
+|--------|-------------|
+| `-b` | Build plugin for Android platform (debug build variant by default) |
+| `-c` | Clean Android build |
+| `-d` | Uninstall Android plugin from demo app |
+| `-D` | Install Android plugin to demo app |
+| `-h` | Display script usage information |
+| `-r` | Build Android plugin with release build variant |
+| `-R` | Create Android relese archive |
+
+#### Android Studio
+
+If using Android Studio, make sure to open the root Gradle project from the `common` directory.
+
+### <img src="../images/icon.png" width="20"> iOS Builds
+
+#### Quick Reference
+
+```bash
+# Clean and run iOS debug build
+./script/build.sh -i -- -cb
+```
+
+!!! note
+ Options after `--` are passed to `build_ios.sh`
 
 ```bash
 # Full build (first time - downloads Godot)
@@ -86,95 +99,57 @@ icon: fontawesome/solid/hammer
 # Full clean rebuild (removes Godot)
 ./script/build_ios.sh -cgA
 
-# Build and create archive
-./script/build_ios.sh -cbz
+# Clean, build and create archive
+./script/build_ios.sh -cbBR
 
 # Custom timeout for header generation (seconds)
 ./script/build_ios.sh -H -t 60
 ```
 
-### Build Options
+#### Build Options
 
 | Option | Description |
 |--------|-------------|
-| `-a` | Generate headers, install pods, and build |
+| `-a` | Generate headers, add packages, and build |
 | `-A` | Download Godot + full build |
-| `-b` | Build plugin only |
+| `-b` | Run debug build |
+| `-B` | Run release build |
 | `-c` | Clean existing build |
 | `-g` | Remove Godot directory |
 | `-G` | Download Godot |
 | `-h` | Display help |
 | `-H` | Generate Godot headers |
-| `-p` | Remove pods and pod trunk |
-| `-P` | Install CocoaPods |
+| `-p` | Remove SPM packages |
+| `-P` | Add SPM packages |
+| `-R` | Create release archive |
 | `-t <seconds>` | Set header generation timeout |
-| `-z` | Create zip archive |
 
-### Build Process Explained
+#### Build Process Explained
 
 The iOS build process involves several steps:
 
 1. **Download Godot** (if needed):
    - Downloads the official Godot binary from GitHub
    - Version specified in `config.properties`
-   - Extracted to `ios/godot/`
+   - Extracted to `ios/godot/` by default, or to the path set by `godot.dir` in `common/local.properties`
 
 2. **Generate Headers**:
    - Starts a Godot build to generate C++ headers
    - Timeout prevents full Godot build (we only need headers)
    - Default timeout: 40 seconds (increase if needed)
 
-3. **Install CocoaPods**:
-   - Creates workspace for Xcode
+3. **Add Swift Packages**:
+   - Resolves package dependencies for Xcode
 
 4. **Build XCFrameworks**:
    - Builds for iOS device (arm64)
    - Builds for iOS simulator (arm64, x86_64)
    - Creates universal XCFrameworks for debug and release
 
-### Output Locations
+#### Output Locations
 
-- **Godot source:** `ios/godot/`
+- **Godot source:** `ios/godot/` (default) or path set by `godot.dir` in `common/local.properties`
 - **Build artifacts:** `ios/build/`
 - **Frameworks:** `ios/build/framework/`
 - **Archives:** `ios/build/lib/*.xcarchive`
-- **Release archive:** `ios/build/release/OAuth2Plugin-iOS-v*.zip`
-
-### Common iOS Build Patterns
-
-```bash
-# Initial setup
-./script/build_ios.sh -A
-
-# Development cycle (reuses Godot and pods)
-./script/build_ios.sh -cb
-
-# Update dependencies
-./script/build_ios.sh -pP
-
-# Clean slate rebuild
-./script/build_ios.sh -cgpA
-
-# Create release with custom header timeout
-./script/build_ios.sh -cH -t 60 -Pbz
-```
-
-## <img src="../images/icon.png" width="20"> Cross-Platform Builds
-
-Use the main `build.sh` script for coordinated builds:
-
-```bash
-# Build Android, then iOS
-./script/build.sh -cai -- -ca
-
-# iOS build with options (passed after --)
-./script/build.sh -i -- -cgA
-
-# Clean everything
-./script/build.sh -C
-
-# Full release (creates all archives)
-./script/build.sh -R
-```
-!!! note
- Options after `--` are passed to `build_ios.sh`
+- **Release archive:** `release/OAuth2Plugin-iOS-v*.zip`

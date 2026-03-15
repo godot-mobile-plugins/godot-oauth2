@@ -7,22 +7,21 @@
 
 #import <Foundation/Foundation.h>
 
-#include "core/object/object.h"
 #include "core/object/class_db.h"
-
+#include "core/object/object.h"
 
 class OAuth2Plugin : public Object {
 	GDCLASS(OAuth2Plugin, Object);
 
 private:
-	static OAuth2Plugin* instance; // Singleton instance
+	static OAuth2Plugin *instance; // Singleton instance
 
 	static void _bind_methods();
 
 	void cleanup_expired_tokens();
 
 public:
-	static OAuth2Plugin* get_singleton();
+	static OAuth2Plugin *get_singleton();
 
 	PackedStringArray get_all_keys();
 

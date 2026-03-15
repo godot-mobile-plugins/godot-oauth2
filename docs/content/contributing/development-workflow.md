@@ -3,7 +3,7 @@ title: Development workflow
 icon: fontawesome/solid/diagram-project
 ---
 
-## <img src="../images/icon.png" width="24"> Development Workflow
+# <img src="../images/icon.png" width="24"> Development Workflow
 
 ## Initial Setup
 
@@ -18,16 +18,13 @@ icon: fontawesome/solid/diagram-project
    echo "sdk.dir=/path/to/your/android-sdk" > common/local.properties
    ```
 
-3. **First build (downloads Godot automatically):**
+3. **First build:**
    ```bash
    # Android only
-   ./script/build.sh -ca
+   ./script/build.sh -a -- -b
 
-   # iOS only (macOS)
+   # iOS only (macOS) - downloads Godot automatically
    ./script/build.sh -i -- -A
-
-   # Both platforms
-   ./script/build.sh -ca -i -- -A
    ```
 
 ## Making Changes
@@ -40,7 +37,7 @@ icon: fontawesome/solid/diagram-project
 2. **Build and test:**
    ```bash
    # Quick Android build
-   ./script/build.sh -a
+   ./script/build.sh -a -- -b
 
    # Install to demo app
    ./script/build.sh -D
@@ -52,6 +49,6 @@ icon: fontawesome/solid/diagram-project
 
 3. **Iterate:**
    - Make changes
-   - Rebuild with `./script/build.sh -a`
+   - Rebuild with `./script/build.sh -a -- -cb` or  `./script/build.sh -i -- -cb`
    - Test in demo app
-   - Repeat until satisfied
+   - Repeat until tests pass

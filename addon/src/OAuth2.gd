@@ -23,20 +23,18 @@ signal auth_error(error_msg: String)
 ## (for example, by closing the browser or denying consent).
 signal auth_cancelled
 
-
 ## Name used to register this plugin as an Engine singleton.
 ## Access it via `Engine.get_singleton(PLUGIN_SINGLETON_NAME)`.
 const PLUGIN_SINGLETON_NAME: String = "@pluginName@"
-
 
 @export_category("Provider Configuration")
 
 ## OAuth2 provider preset to use.
 ## Changing this may automatically populate provider-specific endpoints and defaults.
-@export var provider: OAuth2Config.Provider = OAuth2Config.Provider.GOOGLE: set = _set_provider
+@export var provider: OAuth2Config.Provider = OAuth2Config.Provider.GOOGLE:
+	set = _set_provider
 
-
-@export_group("Settings","provider_")
+@export_group("Settings", "provider_")
 
 ## Authorization endpoint URL for the OAuth2 provider.
 ## This is where the user is redirected to grant consent.
@@ -48,7 +46,8 @@ const PLUGIN_SINGLETON_NAME: String = "@pluginName@"
 
 ## Domain used by Auth0 or custom OAuth2 tenants.
 ## Example: `my-tenant.auth0.com`
-@export var provider_domain: String = "": set = _set_provider_domain
+@export var provider_domain: String = "":
+	set = _set_provider_domain
 
 ## OAuth2 scopes requested during authentication.
 ## Example: ["openid", "profile", "email"]
@@ -62,11 +61,9 @@ const PLUGIN_SINGLETON_NAME: String = "@pluginName@"
 ## in the authorization or token requests.
 @export var provider_parameters: Dictionary = {}
 
-
 @export_category("Client Configuration")
 
-
-@export_group("Android","android_")
+@export_group("Android", "android_")
 
 ## OAuth2 Client ID issued by the provider for the Android platform.
 @export var android_client_id: String = ""
@@ -83,8 +80,7 @@ const PLUGIN_SINGLETON_NAME: String = "@pluginName@"
 ## This node should emit events when the redirect URI is opened.
 @export_node_path("Deeplink") var android_deeplink_path: NodePath
 
-
-@export_group("iOS","ios_")
+@export_group("iOS", "ios_")
 
 ## OAuth2 Client ID issued by the provider for the iOS platform.
 @export var ios_client_id: String = ""
@@ -101,7 +97,6 @@ const PLUGIN_SINGLETON_NAME: String = "@pluginName@"
 ## This node should emit events when the redirect URI is opened.
 @export_node_path("Deeplink") var ios_deeplink_path: NodePath
 
-
 var auth_endpoint_format: String = ""
 var token_endpoint_format: String = ""
 
@@ -116,8 +111,10 @@ var _state: String
 var _code_verifier: String
 var _plugin_singleton: Object
 
+
 func _ready() -> void:
-	if Engine.is_editor_hint(): return
+	if Engine.is_editor_hint():
+		return
 
 	if OS.has_feature("ios"):
 		_client_id = ios_client_id
@@ -161,7 +158,9 @@ func _setup_native_plugin() -> void:
 	else:
 		log_warn("OAuth2: Native SecureStorage plugin not found. Tokens will not be persisted securely.")
 
+
 # Public API
+
 
 func authorize() -> void:
 	var config: ProviderConfig = _get_current_config()
@@ -172,7 +171,7 @@ func authorize() -> void:
 	auth_started.emit()
 
 	# State & PKCE
-	_state = OAuth2PKCE.generate_verifier().left(32) # Simple random string
+	_state = OAuth2PKCE.generate_verifier().left(32)  # Simple random string
 	var params = config.get_params()
 
 	params["client_id"] = _client_id
@@ -197,10 +196,12 @@ func authorize() -> void:
 	# Launch external browser
 	OS.shell_open(auth_url)
 
+
 ## Manually saves a session. Use this if the provider does not support OIDC (no id_token)
 ## or if you wish to use a custom session ID (e.g. username) instead of the subject ID.
 func save_session(token_data: Dictionary, session_id: String) -> void:
 	_save_tokens_securely_for_session(token_data, session_id)
+
 
 ## Returns the access token for the first active session found, or empty string.
 func get_stored_token() -> String:
@@ -209,6 +210,7 @@ func get_stored_token() -> String:
 		return get_stored_token_for(provider, sessions[0]["session_id"])
 	return ""
 
+
 ## Retrieves a specific token for a provider and session.
 func get_stored_token_for(p_provider: OAuth2Config.Provider, s_id: String) -> String:
 	if _plugin_singleton:
@@ -216,49 +218,61 @@ func get_stored_token_for(p_provider: OAuth2Config.Provider, s_id: String) -> St
 		return _plugin_singleton.get_token(prefix + "access_token")
 	return ""
 
+
 func clear_tokens() -> void:
 	remove_active_sessions(provider)
 
+
 # Session Management API
+
 
 func get_all_active_sessions() -> Array:
 	return _filter_sessions("")
 
+
 func get_active_sessions(p_provider: OAuth2Config.Provider) -> Array:
 	return _filter_sessions(OAuth2Config.Provider.keys()[p_provider])
+
 
 func remove_all_active_sessions() -> void:
 	_clear_by_prefix("session:")
 
+
 func remove_active_sessions(p_provider: OAuth2Config.Provider) -> void:
 	_clear_by_prefix("session:%s:" % OAuth2Config.Provider.keys()[p_provider])
+
 
 # Helper to parse keys and return session dictionaries
 func _filter_sessions(filter_provider: String) -> Array:
 	var sessions = []
-	if not _plugin_singleton: return sessions
-	
+	if not _plugin_singleton:
+		return sessions
+
 	var all_keys = _plugin_singleton.get_all_keys()
-	var unique_sessions = {} 
+	var unique_sessions = {}
 
 	for key in all_keys:
 		if key.begins_with("session:"):
-			var parts = key.split(":") # [session, PROVIDER, ID, TYPE]
+			var parts = key.split(":")  # [session, PROVIDER, ID, TYPE]
 			if parts.size() >= 4:
 				var p_name = parts[1]
 				var s_id = parts[2]
 				if filter_provider == "" or p_name == filter_provider:
 					unique_sessions[p_name + ":" + s_id] = {"provider": p_name, "session_id": s_id}
-	
+
 	return unique_sessions.values()
 
+
 func _clear_by_prefix(prefix: String) -> void:
-	if not _plugin_singleton: return
+	if not _plugin_singleton:
+		return
 	for key in _plugin_singleton.get_all_keys():
 		if key.begins_with(prefix):
 			_plugin_singleton.delete_token(key)
 
+
 # Internal Logic
+
 
 func _get_current_config() -> ProviderConfig:
 	var __config = OAuth2Config.get_config(provider)
@@ -294,17 +308,17 @@ func _on_deeplink_received(url_obj: DeeplinkUrl) -> void:
 	var incoming_state = params.get("state", "")
 	if _state.is_empty() or _state != incoming_state:
 		log_info("%s skipping deeplink as state doesn't match" % get_path())
-		return 
+		return
 
 	# Handle actual Errors from the provider
 	if params.has("error"):
 		auth_error.emit(params.get("error_description", "Unknown OAuth Error"))
-		_state = "" # Clear state after handling
+		_state = ""  # Clear state after handling
 		return
 
 	# Success: Proceed to exchange code for token
 	var code = params.get("code")
-	_state = "" # Clear state as it's no longer needed
+	_state = ""  # Clear state as it's no longer needed
 	_exchange_code(code)
 
 
@@ -312,10 +326,7 @@ func _exchange_code(code: String) -> void:
 	var config: ProviderConfig = _get_current_config()
 
 	var body_params = {
-		"client_id": _client_id,
-		"grant_type": "authorization_code",
-		"code": code,
-		"redirect_uri": _redirect_uri
+		"client_id": _client_id, "grant_type": "authorization_code", "code": code, "redirect_uri": _redirect_uri
 	}
 
 	if not _client_secret.is_empty():
@@ -328,10 +339,8 @@ func _exchange_code(code: String) -> void:
 	for key in body_params:
 		query_string += "%s=%s&" % [key, body_params[key].uri_encode()]
 
-	var headers = [
-		"Content-Type: application/x-www-form-urlencoded",
-		"Accept: application/json" # Request a JSON response
-	]
+	# Request a JSON response
+	var headers = ["Content-Type: application/x-www-form-urlencoded", "Accept: application/json"]
 
 	_http_request.request(config.get_token_endpoint(), headers, HTTPClient.METHOD_POST, query_string)
 
@@ -372,26 +381,31 @@ func _save_tokens_securely(data: Dictionary) -> void:
 	else:
 		log_info("No id_token in response. Session not auto-saved. Please call save_session() manually.")
 
+
 # Helper to decode JWT (copied here to avoid dependency on Main)
 func _decode_jwt_payload_safe(jwt: String) -> Dictionary:
 	var parts = jwt.split(".")
-	if parts.size() < 2: return {}
+	if parts.size() < 2:
+		return {}
 	var payload_b64 = parts[1].replace("-", "+").replace("_", "/")
-	while payload_b64.length() % 4 != 0: payload_b64 += "="
+	while payload_b64.length() % 4 != 0:
+		payload_b64 += "="
 	var json_string = Marshalls.base64_to_utf8(payload_b64)
 	return JSON.parse_string(json_string) if json_string else {}
 
+
 func _save_tokens_securely_for_session(data: Dictionary, s_id: String) -> void:
-	if not _plugin_singleton: return
-	
+	if not _plugin_singleton:
+		return
+
 	var provider_name = OAuth2Config.Provider.keys()[provider]
 	var prefix = "session:%s:%s:" % [provider_name, s_id]
-	
+
 	if data.has("access_token"):
 		_plugin_singleton.save_token(prefix + "access_token", data["access_token"])
 	if data.has("refresh_token"):
 		_plugin_singleton.save_token(prefix + "refresh_token", data["refresh_token"])
-	
+
 	if data.has("expires_in"):
 		var expiry = int(Time.get_unix_time_from_system()) + int(data["expires_in"])
 		_plugin_singleton.save_token(prefix + "expires_at", str(expiry))
