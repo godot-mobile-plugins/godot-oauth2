@@ -340,7 +340,7 @@ func _exchange_code(code: String) -> void:
 		query_string += "%s=%s&" % [key, body_params[key].uri_encode()]
 
 	# Request a JSON response
-	var headers = ["Content-Type: application/x-www-form-urlencoded", "Accept: application/json"]  
+	var headers = ["Content-Type: application/x-www-form-urlencoded", "Accept: application/json"]
 
 	_http_request.request(config.get_token_endpoint(), headers, HTTPClient.METHOD_POST, query_string)
 
