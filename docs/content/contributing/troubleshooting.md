@@ -24,13 +24,10 @@ rm -rf ~/.gradle/caches/
 
 ## iOS
 
-**Problem:** CocoaPods installation fails
+**Problem:** SPM package resolution fails
 ```bash
-# Solution: Update CocoaPods
-sudo gem install cocoapods
-pod repo update
-cd ios
-pod install --repo-update
+# Solution: Clear SPM cache and re-resolve
+./script/build_ios.sh -pP
 ```
 
 **Problem:** Header generation timeout
@@ -46,9 +43,25 @@ rm -rf ios/build/DerivedData
 ./script/build_ios.sh -cb
 ```
 
+**Problem:** Godot version mismatch when using a custom `godot.dir`
+```
+# The GODOT_VERSION file in the configured directory must match
+# the godotVersion property in common/config/config.properties.
+# Solution: remove and re-download Godot into the configured directory
+./script/build_ios.sh -gG
+```
+
+**Problem:** Build cannot find Godot headers after setting `godot.dir`
+```bash
+# Verify the path is set correctly in common/local.properties:
+#   godot.dir=/your/custom/path
+# Then re-generate headers:
+./script/build_ios.sh -H
+```
+
 **Problem:** "No such module" errors
 ```bash
-# Solution: Ensure pods are installed
+# Solution: Ensure packages are added and resolved
 ./script/build_ios.sh -pP
 ```
 
@@ -57,4 +70,3 @@ rm -rf ios/build/DerivedData
 - Check existing [GitHub Issues](https://github.com/godot-mobile-plugins/godot-oauth2/issues)
 - Check exısting [GitHub Discussions](https://github.com/godot-mobile-plugins/godot-oauth2/discussions)
 - Review [Godot documentation](https://docs.godotengine.org/)
-

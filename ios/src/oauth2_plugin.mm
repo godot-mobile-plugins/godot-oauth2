@@ -7,8 +7,7 @@
 #import <Foundation/Foundation.h>
 #import <Security/Security.h>
 
-
-OAuth2Plugin* OAuth2Plugin::instance = NULL;
+OAuth2Plugin *OAuth2Plugin::instance = NULL;
 
 void OAuth2Plugin::_bind_methods() {
 	ClassDB::bind_method(D_METHOD("get_all_keys"), &OAuth2Plugin::get_all_keys);
@@ -28,7 +27,9 @@ PackedStringArray OAuth2Plugin::get_all_keys() {
 	if (SecItemCopyMatching((__bridge CFDictionaryRef)query, &result) == errSecSuccess) {
 		for (NSDictionary *item in (__bridge_transfer NSArray *)result) {
 			NSString *account = item[(__bridge id)kSecAttrAccount];
-			if (account) key_list.append(String([account UTF8String]));
+			if (account) {
+				key_list.append(String([account UTF8String]));
+			}
 		}
 	}
 	return key_list;
@@ -51,7 +52,7 @@ void OAuth2Plugin::save_token(String key, String value) {
 
 String OAuth2Plugin::get_token(String key) {
 	NSString *nKey = [NSString stringWithUTF8String:key.utf8().get_data()];
-	
+
 	NSDictionary *query = @{
 		(__bridge id)kSecClass : (__bridge id)kSecClassGenericPassword,
 		(__bridge id)kSecAttrAccount : nKey,
@@ -72,10 +73,8 @@ String OAuth2Plugin::get_token(String key) {
 
 void OAuth2Plugin::delete_token(String key) {
 	NSString *nKey = [NSString stringWithUTF8String:key.utf8().get_data()];
-	NSDictionary *query = @{
-		(__bridge id)kSecClass : (__bridge id)kSecClassGenericPassword,
-		(__bridge id)kSecAttrAccount : nKey
-	};
+	NSDictionary *query =
+			@{ (__bridge id)kSecClass : (__bridge id)kSecClassGenericPassword, (__bridge id)kSecAttrAccount : nKey };
 	SecItemDelete((__bridge CFDictionaryRef)query);
 }
 
@@ -87,7 +86,7 @@ void OAuth2Plugin::cleanup_expired_tokens() {
 			String val = get_token(keys[i]);
 			if (val.to_int() < currentTime) {
 				// Use rfind() instead of find_last()
-				int last_colon_pos = keys[i].rfind(":"); 
+				int last_colon_pos = keys[i].rfind(":");
 				if (last_colon_pos != -1) {
 					String prefix = keys[i].substr(0, last_colon_pos + 1);
 					for (int j = 0; j < keys.size(); j++) {

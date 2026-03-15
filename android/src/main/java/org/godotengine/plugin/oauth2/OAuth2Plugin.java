@@ -70,7 +70,9 @@ public class OAuth2Plugin extends GodotPlugin {
 
 	private void cleanup_expired_tokens() {
 		Activity activity = getActivity();
-		if (activity == null) return;
+		if (activity == null) {
+			return;
+		}
 		SharedPreferences prefs = activity.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		Map<String, ?> allEntries = prefs.getAll();
 		long currentTime = System.currentTimeMillis() / 1000;
@@ -85,11 +87,15 @@ public class OAuth2Plugin extends GodotPlugin {
 						String prefix = key.substring(0, key.lastIndexOf(":") + 1);
 						SharedPreferences.Editor editor = prefs.edit();
 						for (String k : allEntries.keySet()) {
-							if (k.startsWith(prefix)) editor.remove(k);
+							if (k.startsWith(prefix)) {
+								editor.remove(k);
+							}
 						}
 						editor.apply();
 					}
-				} catch (Exception e) { Log.e(LOG_TAG, "Cleanup error", e); }
+				} catch (Exception e) {
+					Log.e(LOG_TAG, "Cleanup error", e);
+				}
 			}
 		}
 	}
@@ -113,9 +119,13 @@ public class OAuth2Plugin extends GodotPlugin {
 
 	private String decrypt(String encryptedText) {
 		try {
-			if (encryptedText == null || encryptedText.isEmpty()) return "";
+			if (encryptedText == null || encryptedText.isEmpty()) {
+				return "";
+			}
 			String[] parts = encryptedText.split(":");
-			if (parts.length != 2) return "";
+			if (parts.length != 2) {
+				return "";
+			}
 
 			byte[] iv = Base64.decode(parts[0], Base64.NO_WRAP);
 			byte[] encryptedData = Base64.decode(parts[1], Base64.NO_WRAP);
@@ -136,7 +146,9 @@ public class OAuth2Plugin extends GodotPlugin {
 	@UsedByGodot
 	public String[] get_all_keys() {
 		Activity activity = getActivity();
-		if (activity == null) return new String[0];
+		if (activity == null) {
+			return new String[0];
+		}
 		SharedPreferences prefs = activity.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		return prefs.getAll().keySet().toArray(new String[0]);
 	}
@@ -144,7 +156,9 @@ public class OAuth2Plugin extends GodotPlugin {
 	@UsedByGodot
 	public void save_token(String key, String value) {
 		Activity activity = getActivity();
-		if (activity == null) return;
+		if (activity == null) {
+			return;
+		}
 
 		String encryptedValue = encrypt(value);
 		if (encryptedValue != null) {
@@ -156,19 +170,25 @@ public class OAuth2Plugin extends GodotPlugin {
 	@UsedByGodot
 	public String get_token(String key) {
 		Activity activity = getActivity();
-		if (activity == null) return "";
+		if (activity == null) {
+			return "";
+		}
 
 		SharedPreferences prefs = activity.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		String encryptedValue = prefs.getString(key, null);
-		
-		if (encryptedValue == null) return "";
+
+		if (encryptedValue == null) {
+			return "";
+		}
 		return decrypt(encryptedValue);
 	}
 
 	@UsedByGodot
 	public void delete_token(String key) {
 		Activity activity = getActivity();
-		if (activity == null) return;
+		if (activity == null) {
+			return;
+		}
 
 		SharedPreferences prefs = activity.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		prefs.edit().remove(key).apply();

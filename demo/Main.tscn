@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://daro5x6n3pd26"]
+[gd_scene format=3 uid="uid://daro5x6n3pd26"]
 
 [ext_resource type="Script" uid="uid://bcqb5hwnjbtob" path="res://Main.gd" id="1_wt50o"]
 [ext_resource type="Texture2D" uid="uid://ccwvfcumkwxsd" path="res://assets/oauth2-android.png" id="2_qti4s"]
@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://c8s6necy0uyw8" path="res://addons/OAuth2Plugin/OAuth2.gd" id="4_cm0pq"]
 [ext_resource type="Script" uid="uid://0kj2ej3ipx6m" path="res://addons/DeeplinkPlugin/Deeplink.gd" id="5_fos0i"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=505540802]
 script = ExtResource("1_wt50o")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=904365273]
 
-[node name="MainContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MainContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1108555967]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,89 +24,91 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MainContainer" unique_id=292639477]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="TextureHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="TextureHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=2113806083]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_constants/separation = 40
 
-[node name="AndroidTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBoxContainer"]
+[node name="AndroidTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBoxContainer" unique_id=1648946784]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 96)
 layout_mode = 2
 texture = ExtResource("2_qti4s")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="iOSTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBoxContainer"]
+[node name="iOSTextureRect" type="TextureRect" parent="CanvasLayer/MainContainer/VBoxContainer/TextureHBoxContainer" unique_id=63703559]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 texture = ExtResource("3_cm0pq")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=1870832123]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/HBoxContainer" unique_id=866004319]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 24
 text = "OAuth 2.0 Demo"
 horizontal_alignment = 1
 
-[node name="StatusHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="StatusHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=1085113428]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/StatusHBoxContainer"]
+[node name="TitleLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/StatusHBoxContainer" unique_id=1476847950]
 layout_mode = 2
 text = "Status:"
 
-[node name="ValueLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/StatusHBoxContainer"]
+[node name="ValueLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/StatusHBoxContainer" unique_id=1328500794]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 autowrap_mode = 2
 
-[node name="GoogleButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="GoogleButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=1159371422]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Google Login"
 
-[node name="DiscordButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="DiscordButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=1390795962]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Discord Login"
 
-[node name="GithubButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="GithubButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=884509212]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Github Login"
 
-[node name="LogoutButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="LogoutButton" type="Button" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=1573383226]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Logout"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MainContainer/VBoxContainer" unique_id=83024164]
 custom_minimum_size = Vector2(0, 210)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 14
 scroll_following = true
 
-[node name="GoogleOAuth2" type="Node" parent="."]
+[node name="GoogleOAuth2" type="Node" parent="." unique_id=972980442]
 script = ExtResource("4_cm0pq")
 provider_auth_endpoint = "https://accounts.google.com/o/oauth2/v2/auth"
 provider_token_endpoint = "https://oauth2.googleapis.com/token"
@@ -123,19 +125,19 @@ ios_redirect_uri = "com.googleusercontent.apps.854928845060-kjgra3jv1o8gbbf44jin
 ios_deeplink_path = NodePath("Deeplink_iOS")
 _client_secret = ""
 
-[node name="Deeplink_Android" type="Node" parent="GoogleOAuth2"]
+[node name="Deeplink_Android" type="Node" parent="GoogleOAuth2" unique_id=1141423346]
 script = ExtResource("5_fos0i")
 scheme = "com.googleusercontent.apps.854928845060-441ot0moa19jlif3farnu2413u0o17hq"
 path_prefix = "/auth/callback"
 enabled_platforms = 1
 
-[node name="Deeplink_iOS" type="Node" parent="GoogleOAuth2"]
+[node name="Deeplink_iOS" type="Node" parent="GoogleOAuth2" unique_id=1078882886]
 script = ExtResource("5_fos0i")
 scheme = "com.googleusercontent.apps.854928845060-kjgra3jv1o8gbbf44jino23r95f26seu"
 path_prefix = "/oauth2redirect"
 enabled_platforms = 2
 
-[node name="DiscordOAuth2" type="Node" parent="."]
+[node name="DiscordOAuth2" type="Node" parent="." unique_id=500911253]
 script = ExtResource("4_cm0pq")
 provider = 3
 provider_auth_endpoint = "https://discord.com/api/oauth2/authorize"
@@ -151,11 +153,11 @@ ios_redirect_uri = "oauth2demo://auth/callback"
 ios_deeplink_path = NodePath("../GitHubOAuth2/Deeplink")
 _client_secret = ""
 
-[node name="Deeplink" type="Node" parent="DiscordOAuth2"]
+[node name="Deeplink" type="Node" parent="DiscordOAuth2" unique_id=700648071]
 script = ExtResource("5_fos0i")
 scheme = "oauth2demo"
 
-[node name="GitHubOAuth2" type="Node" parent="."]
+[node name="GitHubOAuth2" type="Node" parent="." unique_id=1814132129]
 script = ExtResource("4_cm0pq")
 provider = 4
 provider_auth_endpoint = "https://github.com/login/oauth/authorize"
@@ -172,7 +174,7 @@ ios_redirect_uri = "oauth2demo://auth/callback"
 ios_deeplink_path = NodePath("Deeplink")
 _client_secret = ""
 
-[node name="Deeplink" type="Node" parent="GitHubOAuth2"]
+[node name="Deeplink" type="Node" parent="GitHubOAuth2" unique_id=622383214]
 script = ExtResource("5_fos0i")
 scheme = "oauth2demo"
 

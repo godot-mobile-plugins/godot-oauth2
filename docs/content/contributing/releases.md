@@ -20,14 +20,17 @@ This creates:
 ## Platform-Specific Releases
 
 ```bash
-# Android only
+# Create all release archives
+./script/build.sh -R
+
+# Create only Android release archive
 ./script/build.sh -A
 
-# iOS only (assumes Godot already downloaded)
+# Create only iOS release archive
 ./script/build.sh -I
 
-# Multi-platform (combines existing archives)
-./script/build.sh -Z
+# Create only multi-platform release archive
+./script/build.sh -M
 ```
 
 ## Release Checklist
