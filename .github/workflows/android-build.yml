@@ -6,7 +6,8 @@ name: Android Build
 
 on:
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
     paths:
       - 'common/config/**'
       - 'common/**/*.gradle.kts'
@@ -20,7 +21,8 @@ jobs:
 
     steps:
       # ── Checkout ────────────────────────────────────────────────────────────
-      - uses: actions/checkout@v6
+      - name: Checkout 
+        uses: actions/checkout@v6
 
       # ── Node ────────────────────────────────────────────────────────────────
       - name: Install Node

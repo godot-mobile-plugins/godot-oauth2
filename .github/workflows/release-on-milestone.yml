@@ -6,7 +6,8 @@ name: Draft Release on Milestone Close
 
 on:
   milestone:
-    types: [closed]
+    types:
+      - closed
 
 permissions:
   contents: write   # required to create releases and upload assets
@@ -21,7 +22,7 @@ jobs:
 
     steps:
       # ── Checkout ────────────────────────────────────────────────────────────
-      - name: Checkout repository
+      - name: Checkout 
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
