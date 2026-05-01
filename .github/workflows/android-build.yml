@@ -42,7 +42,7 @@ jobs:
 
       # ── Prepare for Android build ───────────────────────────────────────────
       - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4
 
       # ── Run Android build ───────────────────────────────────────────────────
       - name: Build Android debug
