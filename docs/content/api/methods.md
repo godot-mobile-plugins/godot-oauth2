@@ -8,6 +8,7 @@ icon: fontawesome/solid/bolt
 | Name | Description |
 |---|---|
 | `authorize() -> void` | Starts the OAuth 2.0 authorization flow. |
+| `cancel_auth() -> void` | Cancel the OAuth 2.0 authorization flow. |
 | `save_session(token_data: Dictionary, session_id: String) -> void` | Manually saves a session when automatic saving is not possible. |
 | `get_stored_token() -> String`| Returns the access token for the first active session. |
 | `get_stored_token_for(provider, session_id) -> String` | Retrieves a stored access token for a specific provider and session. |

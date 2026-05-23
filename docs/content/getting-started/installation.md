@@ -54,6 +54,6 @@ To install the plugin manually
 
 ## <img src="../images/icon.png" width="20"> Dependencies
 
-**`Deeplink Plugin` version `5.3`**
+**`Deeplink Plugin`**
 
-The [Deeplink Plugin](https://github.com/godot-mobile-plugins/godot-deeplink) is required to receive OAuth redirect callbacks via custom URI schemes.
+The [Deeplink Plugin](https://github.com/godot-mobile-plugins/godot-deeplink) [v6.0](https://github.com/godot-mobile-plugins/godot-deeplink/releases/tag/v6.0) is required to receive OAuth redirect callbacks via custom URI schemes.

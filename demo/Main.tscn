@@ -73,6 +73,7 @@ text = "Status:"
 
 [node name="ValueLabel" type="Label" parent="CanvasLayer/MainContainer/VBoxContainer/StatusHBoxContainer" unique_id=1328500794]
 custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(360, -1)
 layout_mode = 2
 size_flags_horizontal = 3
 autowrap_mode = 2
@@ -117,13 +118,13 @@ provider_parameters = {
 "access_type": "offline",
 "prompt": "consent"
 }
+browser_mode = 1
 android_client_id = "854928845060-441ot0moa19jlif3farnu2413u0o17hq.apps.googleusercontent.com"
 android_redirect_uri = "com.googleusercontent.apps.854928845060-441ot0moa19jlif3farnu2413u0o17hq:/auth/callback"
 android_deeplink_path = NodePath("Deeplink_Android")
 ios_client_id = "854928845060-kjgra3jv1o8gbbf44jino23r95f26seu.apps.googleusercontent.com"
 ios_redirect_uri = "com.googleusercontent.apps.854928845060-kjgra3jv1o8gbbf44jino23r95f26seu:/oauth2redirect"
 ios_deeplink_path = NodePath("Deeplink_iOS")
-_client_secret = ""
 
 [node name="Deeplink_Android" type="Node" parent="GoogleOAuth2" unique_id=1141423346]
 script = ExtResource("5_fos0i")
@@ -151,7 +152,6 @@ ios_client_id = "1452145666771128534"
 ios_client_secret = "PveoIfZAQc3sfndz1H23q5gSzMzlbWvo"
 ios_redirect_uri = "oauth2demo://auth/callback"
 ios_deeplink_path = NodePath("../GitHubOAuth2/Deeplink")
-_client_secret = ""
 
 [node name="Deeplink" type="Node" parent="DiscordOAuth2" unique_id=700648071]
 script = ExtResource("5_fos0i")
@@ -172,7 +172,6 @@ ios_client_id = "Ov23lic9l6wvOe0ykb76"
 ios_client_secret = "75d1ddad9ff5d4ab4a25f02646f158b3d3bc6839"
 ios_redirect_uri = "oauth2demo://auth/callback"
 ios_deeplink_path = NodePath("Deeplink")
-_client_secret = ""
 
 [node name="Deeplink" type="Node" parent="GitHubOAuth2" unique_id=622383214]
 script = ExtResource("5_fos0i")

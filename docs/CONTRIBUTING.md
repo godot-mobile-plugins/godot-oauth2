@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/icon.png" width="28"> Contributing
+# <img src="https://raw.githubusercontent.com/godot-mobile-plugins/godot-oauth2/main/addon/src/main/icon.png" width="28"> Contributing
 
 Thank you for your interest in contributing to the Godot OAuth 2.0 Plugin!
 

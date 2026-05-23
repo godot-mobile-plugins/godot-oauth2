@@ -7,7 +7,10 @@ icon: fontawesome/solid/rocket
 
 - Add an `OAuth2` node to your main scene or to an autoload/global scene.
 
+- Set the **Browser Mode** in the inspector: `EXTERNAL` (default, system browser) or `IN_APP` (Chrome Custom Tab on Android / ASWebAuthenticationSession on iOS).
+
 - Add a `Deeplink` node to your scene and configure your redirect URI.
+  > **Note:** A `Deeplink` node is required in all cases **except** iOS with `IN_APP` mode, where the OS intercepts the redirect internally.
 
 - Assign the `Deeplink` node path in the `OAuth2` node inspector.
 
@@ -15,13 +18,13 @@ icon: fontawesome/solid/rocket
 
 - Connect to `OAuth2` signals.
 
-- Call `authorize()` to start authentication.
+- Call `authorize()` to start authentication. Call `cancel_auth()` to cancel an in-progress in-app session (safe no-op in `EXTERNAL` mode).
 
 - Use the `OAuth2` node’s public methods to initiate authorization and manage sessions.
 
 - Listen to signals to handle success, errors, and cancellations.
 
-Example of  basic  setup 
+Example:
 
 ```gdscript
 @onready var oauth2 := $OAuth2
@@ -35,6 +38,9 @@ func _ready():
 func login():
 	oauth2.authorize()
 
+func cancel_login():
+	oauth2.cancel_auth()  # safe to call in EXTERNAL mode (no-op)
+
 func _on_auth_started():
 	print("Authentication started")
 
@@ -47,5 +53,3 @@ func _on_auth_error(msg: String):
 func _on_auth_cancelled():
 	print("Authentication cancelled")
 ```
-
-There is also a [demo](https://github.com/godot-mobile-plugins/godot-oauth2/tree/main/demo) which can help you get started quickly.
