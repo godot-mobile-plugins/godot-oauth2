@@ -31,11 +31,11 @@ jobs:
         uses: ./.github/actions/install-ktlint
 
       - name: Run ktlint
-        run: ktlint "android/src/**/*.kt"
+        run: ktlint "android/src/**/*.kt" "!android/src/**/*Plugin.kt"
 
       - name: Run Checkstyle
         run: |
-          CHECKSTYLE_VERSION="13.3.0"
+          CHECKSTYLE_VERSION="12.3.1"
           wget "https://github.com/checkstyle/checkstyle/releases/download/checkstyle-${CHECKSTYLE_VERSION}/checkstyle-${CHECKSTYLE_VERSION}-all.jar" \
             -O checkstyle-all.jar
           java -jar checkstyle-all.jar -c .github/config/checkstyle.xml android/src

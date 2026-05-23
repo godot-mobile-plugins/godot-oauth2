@@ -15,8 +15,9 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="OAuth 2.0 Demo"
+config/tags=PackedStringArray("android", "demo", "ios", "oauth", "plugin")
 run/main_scene="uid://daro5x6n3pd26"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/oauth2-android.png"
 
 [debug]

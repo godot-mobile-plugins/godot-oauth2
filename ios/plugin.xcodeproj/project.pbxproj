@@ -3,13 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0721C6A22F82629000A9BA75 /* liboauth2_plugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90CAAA9424E71FF10013969F /* liboauth2_plugin.a */; };
+		0721C6C12F82639B00A9BA75 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0721C6C02F82639B00A9BA75 /* XCTest.framework */; platformFilter = ios; };
+		077F7D252FB0D9E600B50C57 /* OAuth2InMemoryKeychainBackend.mm in Sources */ = {isa = PBXBuildFile; fileRef = 077F7D242FB0D9E600B50C57 /* OAuth2InMemoryKeychainBackend.mm */; };
 		07DF21842F3EE11600E2725C /* oauth2_plugin_bootstrap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF21812F3EE11600E2725C /* oauth2_plugin_bootstrap.mm */; };
 		07DF21852F3EE11600E2725C /* oauth2_logger.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF217D2F3EE11600E2725C /* oauth2_logger.mm */; };
 		07DF21862F3EE11600E2725C /* oauth2_plugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07DF217F2F3EE11600E2725C /* oauth2_plugin.mm */; };
+		07E668FC2FB0A4D2007DABA7 /* oauth2_keychain_service.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07D030522FB098DC003306A5 /* oauth2_keychain_service.mm */; };
+		07E668FD2FB0A4D2007DABA7 /* oauth2_keychain_service.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07D030522FB098DC003306A5 /* oauth2_keychain_service.mm */; };
+		07E668FE2FB0A4FF007DABA7 /* OAuth2KeychainServiceTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07D030532FB098DC003306A5 /* OAuth2KeychainServiceTests.mm */; };
+		07E668FF2FB0A4FF007DABA7 /* OAuthTokenFixture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07D0304F2FB098DC003306A5 /* OAuthTokenFixture.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0721C69E2F82629000A9BA75 /* oauth2_plugin_tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = oauth2_plugin_tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0721C6C02F82639B00A9BA75 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		077F7D232FB0D9E600B50C57 /* OAuth2InMemoryKeychainBackend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OAuth2InMemoryKeychainBackend.h; sourceTree = "<group>"; };
+		077F7D242FB0D9E600B50C57 /* OAuth2InMemoryKeychainBackend.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OAuth2InMemoryKeychainBackend.mm; sourceTree = "<group>"; };
+		07D0304E2FB098DC003306A5 /* OAuthTokenFixture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OAuthTokenFixture.h; sourceTree = "<group>"; };
+		07D0304F2FB098DC003306A5 /* OAuthTokenFixture.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OAuthTokenFixture.mm; sourceTree = "<group>"; };
+		07D030512FB098DC003306A5 /* oauth2_keychain_service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauth2_keychain_service.h; sourceTree = "<group>"; };
+		07D030522FB098DC003306A5 /* oauth2_keychain_service.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = oauth2_keychain_service.mm; sourceTree = "<group>"; };
+		07D030532FB098DC003306A5 /* OAuth2KeychainServiceTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OAuth2KeychainServiceTests.mm; sourceTree = "<group>"; };
 		07DF217C2F3EE11600E2725C /* oauth2_logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauth2_logger.h; sourceTree = "<group>"; };
 		07DF217D2F3EE11600E2725C /* oauth2_logger.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = oauth2_logger.mm; sourceTree = "<group>"; };
 		07DF217E2F3EE11600E2725C /* oauth2_plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauth2_plugin.h; sourceTree = "<group>"; };
@@ -36,6 +52,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0721C69B2F82629000A9BA75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0721C6C12F82639B00A9BA75 /* XCTest.framework in Frameworks */,
+				0721C6A22F82629000A9BA75 /* liboauth2_plugin.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90CAAA9124E71FF10013969F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,9 +71,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07D030502FB098DC003306A5 /* fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				07D0304E2FB098DC003306A5 /* OAuthTokenFixture.h */,
+				07D0304F2FB098DC003306A5 /* OAuthTokenFixture.mm */,
+			);
+			path = fixtures;
+			sourceTree = "<group>";
+		};
+		07D030542FB098DC003306A5 /* unit */ = {
+			isa = PBXGroup;
+			children = (
+				07D030532FB098DC003306A5 /* OAuth2KeychainServiceTests.mm */,
+			);
+			path = unit;
+			sourceTree = "<group>";
+		};
+		07D030552FB098DC003306A5 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				07D030502FB098DC003306A5 /* fixtures */,
+				07D030542FB098DC003306A5 /* unit */,
+			);
+			path = test;
+			sourceTree = "<group>";
+		};
 		07DF21832F3EE11600E2725C /* src */ = {
 			isa = PBXGroup;
 			children = (
+				077F7D232FB0D9E600B50C57 /* OAuth2InMemoryKeychainBackend.h */,
+				077F7D242FB0D9E600B50C57 /* OAuth2InMemoryKeychainBackend.mm */,
+				07D030512FB098DC003306A5 /* oauth2_keychain_service.h */,
+				07D030522FB098DC003306A5 /* oauth2_keychain_service.mm */,
 				07DF217C2F3EE11600E2725C /* oauth2_logger.h */,
 				07DF217D2F3EE11600E2725C /* oauth2_logger.mm */,
 				07DF217E2F3EE11600E2725C /* oauth2_plugin.h */,
@@ -63,6 +118,7 @@
 		90CAAA8B24E71FF10013969F = {
 			isa = PBXGroup;
 			children = (
+				07D030552FB098DC003306A5 /* test */,
 				07DF21832F3EE11600E2725C /* src */,
 				90CAAA9524E71FF10013969F /* Products */,
 				90CAAAA824E72A8A0013969F /* Frameworks */,
@@ -73,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				90CAAA9424E71FF10013969F /* liboauth2_plugin.a */,
+				0721C69E2F82629000A9BA75 /* oauth2_plugin_tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +137,7 @@
 		90CAAAA824E72A8A0013969F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0721C6C02F82639B00A9BA75 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,6 +145,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0721C69D2F82629000A9BA75 /* oauth2_plugin_tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0721C6A72F82629000A9BA75 /* Build configuration list for PBXNativeTarget "oauth2_plugin_tests" */;
+			buildPhases = (
+				0721C69A2F82629000A9BA75 /* Sources */,
+				0721C69B2F82629000A9BA75 /* Frameworks */,
+				0721C69C2F82629000A9BA75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = oauth2_plugin_tests;
+			productName = oauth2_plugin_tests;
+			productReference = 0721C69E2F82629000A9BA75 /* oauth2_plugin_tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		90CAAA9324E71FF10013969F /* oauth2_plugin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90CAAA9D24E71FF10013969F /* Build configuration list for PBXNativeTarget "oauth2_plugin" */;
@@ -110,9 +185,14 @@
 		90CAAA8C24E71FF10013969F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1160;
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
 				ORGANIZATIONNAME = Godot;
 				TargetAttributes = {
+					0721C69D2F82629000A9BA75 = {
+						CreatedOnToolsVersion = 26.0;
+					};
 					90CAAA9324E71FF10013969F = {
 						CreatedOnToolsVersion = 11.6;
 						LastSwiftMigration = 1230;
@@ -133,17 +213,40 @@
 			projectRoot = "";
 			targets = (
 				90CAAA9324E71FF10013969F /* oauth2_plugin */,
+				0721C69D2F82629000A9BA75 /* oauth2_plugin_tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		0721C69C2F82629000A9BA75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		0721C69A2F82629000A9BA75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07E668FD2FB0A4D2007DABA7 /* oauth2_keychain_service.mm in Sources */,
+				07E668FE2FB0A4FF007DABA7 /* OAuth2KeychainServiceTests.mm in Sources */,
+				07E668FF2FB0A4FF007DABA7 /* OAuthTokenFixture.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		90CAAA9024E71FF10013969F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E668FC2FB0A4D2007DABA7 /* oauth2_keychain_service.mm in Sources */,
 				07DF21842F3EE11600E2725C /* oauth2_plugin_bootstrap.mm in Sources */,
 				07DF21852F3EE11600E2725C /* oauth2_logger.mm in Sources */,
+				077F7D252FB0D9E600B50C57 /* OAuth2InMemoryKeychainBackend.mm in Sources */,
 				07DF21862F3EE11600E2725C /* oauth2_plugin.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +254,196 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		0721C6A52F82629000A9BA75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UC9RM2H3ML;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				GODOT_DIR = "$(SRCROOT)/godot";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(CONFIGURATION_TEMP_DIR)/oauth2_plugin.build/DerivedSources",
+					"$(SRCROOT)/test/fixtures",
+					"$(SRCROOT)/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(GODOT_DIR)/bin",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = (
+					"-g",
+					"-DDEBUG",
+					"-DDEBUG_ENABLED",
+					"-DDEBUG_MEMORY_ALLOC",
+					"-DDISABLE_FORCED_INLINE",
+					"-DTYPED_METHOD_BIND",
+					"-fmodules",
+					"-fobjc-arc",
+					"-fmessage-length=0",
+					"-fno-strict-aliasing",
+					"-fdiagnostics-print-source-range-info",
+					"-fdiagnostics-show-category=id",
+					"-fdiagnostics-parseable-fixits",
+					"-fpascal-strings",
+					"-fblocks",
+					"-fvisibility=hidden",
+					"-MMD",
+					"-fno-exceptions",
+					"-Wno-ambiguous-macro",
+					"-Wall",
+					"-Werror=return-type",
+					"-DPTRCALL_ENABLED",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fcxx-modules",
+					"-gdwarf-2",
+					"-O0",
+					"-DDEBUG_MEMORY_ALLOC",
+					"-DDISABLE_FORCED_INLINE",
+					"-D_DEBUG",
+					"-DDEBUG=1",
+					"-DDEBUG_ENABLED",
+					"-DVERSION_4_0",
+					"-DIOS_ENABLED",
+					"-DNEED_LONG_INT",
+					"-DLIBYUV_DISABLE_NEON",
+					"-DIPHONE_ENABLED",
+					"-DUNIX_ENABLED",
+					"-DCOREAUDIO_ENABLED",
+					"-DAPPLE_EMBEDDED_ENABLED",
+					"-isystem",
+					"$(GODOT_DIR)",
+					"-isystem",
+					"$(GODOT_DIR)/drivers/apple_embedded",
+					"-isystem",
+					"$(GODOT_DIR)/platform/ios",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-undefined",
+					"dynamic_lookup",
+					"$(GODOT_DIR)/bin/libgodot.ios.template_debug.$(CURRENT_ARCH).simulator.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.godotengine.plugin.plugin-template-unit-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0721C6A62F82629000A9BA75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UC9RM2H3ML;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				GODOT_DIR = "$(SRCROOT)/godot";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(CONFIGURATION_TEMP_DIR)/oauth2_plugin.build/DerivedSources",
+					"$(SRCROOT)/test/fixtures",
+					"$(SRCROOT)/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(GODOT_DIR)/bin",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				OTHER_CFLAGS = (
+					"-fmodules",
+					"-fobjc-arc",
+					"-fmessage-length=0",
+					"-fno-strict-aliasing",
+					"-fdiagnostics-print-source-range-info",
+					"-fdiagnostics-show-category=id",
+					"-fdiagnostics-parseable-fixits",
+					"-fpascal-strings",
+					"-fblocks",
+					"-fvisibility=hidden",
+					"-MMD",
+					"-fno-exceptions",
+					"-Wno-ambiguous-macro",
+					"-Wall",
+					"-Werror=return-type",
+					"-DPTRCALL_ENABLED",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fcxx-modules",
+					"-O2",
+					"-ftree-vectorize",
+					"-DNDEBUG",
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"-DVERSION_4_0",
+					"-DIOS_ENABLED",
+					"-DNEED_LONG_INT",
+					"-DLIBYUV_DISABLE_NEON",
+					"-DIPHONE_ENABLED",
+					"-DUNIX_ENABLED",
+					"-DCOREAUDIO_ENABLED",
+					"-DAPPLE_EMBEDDED_ENABLED",
+					"-isystem",
+					"$(GODOT_DIR)",
+					"-isystem",
+					"$(GODOT_DIR)/drivers/apple_embedded",
+					"-isystem",
+					"$(GODOT_DIR)/platform/ios",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-undefined",
+					"dynamic_lookup",
+					"$(GODOT_DIR)/bin/libgodot.ios.template_debug.$(CURRENT_ARCH).simulator.a",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.godotengine.plugin.plugin-template-unit-tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		90CAAA9B24E71FF10013969F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -177,6 +470,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -185,6 +479,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -235,6 +530,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -243,6 +539,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -253,10 +550,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -265,9 +563,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				GODOT_DIR = "$(SRCROOT)/godot";
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -277,6 +580,7 @@
 					"$(inherited)",
 					"$(GODOT_DIR)/bin",
 				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++17";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-g",
@@ -327,9 +631,11 @@
 					"$(GODOT_DIR)/platform/ios",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = oauth2_plugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "src/oauth2_plugin-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "oauth2_plugin-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -340,9 +646,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				GODOT_DIR = "$(SRCROOT)/godot";
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/src",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,6 +663,7 @@
 					"$(inherited)",
 					"$(GODOT_DIR)/bin",
 				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++17";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
 					"-fmodules",
@@ -393,9 +705,11 @@
 					"$(GODOT_DIR)/platform/ios",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = oauth2_plugin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "src/oauth2_plugin-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "oauth2_plugin-Swift.h";
 				SWIFT_VERSION = 5.9;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -404,6 +718,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0721C6A72F82629000A9BA75 /* Build configuration list for PBXNativeTarget "oauth2_plugin_tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0721C6A52F82629000A9BA75 /* Debug */,
+				0721C6A62F82629000A9BA75 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		90CAAA8F24E71FF10013969F /* Build configuration list for PBXProject "plugin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -3,7 +3,7 @@ title: Guidelines
 icon: fontawesome/solid/book-open
 ---
 
-# <img src="../images/icon.png" width="24"> Guidelines
+# <img src="../images/icon.png" width="24"> Contributing Guidelines
 
 ## Code Style
 

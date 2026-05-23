@@ -32,23 +32,29 @@ nav = [
         { "Auth0" = "providers/auth0.md" },
         { "Custom" = "providers/custom.md" }
     ]},
+    { "Features" = [
+        { "In-App Browser Authentication" = "features/inapp-browser-auth.md" }
+    ]},
     { "Troubleshooting" = [
         { "Android" = "troubleshooting/android.md" },
         { "iOS" = "troubleshooting/ios.md" }
     ]},
   { "Contributing" = [
       { "Overview" = "contributing/index.md" },
+      { "Build System Architecture" = "contributing/build-system-architecture.md" },
       { "Prerequisites" = "contributing/prerequisites.md" },
       { "Configuration" = "contributing/configuration.md" },
       { "Development Workflow" = "contributing/development-workflow.md" },
       { "Building" = "contributing/building.md" },
+      { "Code Formatting" = "contributing/code-formatting.md" },
       { "Testing" = "contributing/testing.md" },
       { "Releases" = "contributing/releases.md" },
       { "Installation" = "contributing/installation.md" },
       { "Troubleshooting" = "contributing/troubleshooting.md" },
+      { "GitHub Workflows" = "contributing/github-workflows.md" },
       { "Guidelines" = "contributing/guidelines.md" }
     ]},
-    { "Links" = "links.md" }
+  { "Links" = "links.md" }
 ]
 
 [project.theme]
