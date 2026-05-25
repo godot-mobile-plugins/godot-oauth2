@@ -5,7 +5,7 @@ icon: fontawesome/brands/markdown
 
 # Documentation Guidelines
 
-This page defines the standard rules for writing documentation in this project. Following these guidelines ensures consistent rendering across MkDocs and Python Markdown-based builds, and avoids common formatting issues with lists, tables, and admonitions.
+The page defines the standard documentation rules for the project. Following the guidelines below ensures consistent rendering and helps avoid common formatting issues with lists, tables, and admonitions.
 
 ## Lists
 
