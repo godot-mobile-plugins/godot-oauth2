@@ -1,5 +1,5 @@
 [project]
-site_name = "godot-oauth2 documentation"
+site_name = "godot-oauth2"
 site_description = "A Godot plugin that provides a unified GDScript interface for OAuth 2.0 authentication flows on Android and iOS."
 site_author = "godot-mobile-plugins"
 copyright = "Copyright (c) 2025-2026 Godot Mobile Plugins"
