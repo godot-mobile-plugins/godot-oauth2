@@ -59,6 +59,6 @@ This will not render correctly.
 
 When in doubt, prefer:
 
-- Blank line before block elements (lists, tables)
+- Blank line before block elements (lists, admonitions, tables)
 - 4-space indentation for nested content
 - Consistency over minimal indentation
