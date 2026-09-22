@@ -24,7 +24,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Configure Pages
@@ -32,6 +32,10 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            docs/content
+            docs/zensical.toml
 
       - name: Setup Python
         uses: actions/setup-python@v6

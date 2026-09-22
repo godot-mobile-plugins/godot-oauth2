@@ -20,7 +20,7 @@ on:
 jobs:
   ios-build-and-test:
     name: iOS Build & Tests
-    runs-on: macos-latest
+    runs-on: macos-26
     timeout-minutes: 60  # <- hard job-level ceiling; prevents long ghost runs
 
     steps:

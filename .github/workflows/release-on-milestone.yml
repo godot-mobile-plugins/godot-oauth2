@@ -22,7 +22,7 @@ jobs:
   draft-release:
     name: Build archives & create draft release
     if: ${{ !github.event.repository.is_template }}
-    runs-on: macos-latest
+    runs-on: macos-26
 
     env:
       TAG_NAME: v${{ inputs.version || github.event.milestone.title }}

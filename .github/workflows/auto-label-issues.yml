@@ -11,7 +11,7 @@ on:
 
 jobs:
   triage:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       issues: write  # Required to apply labels to the issue
       contents: read # Required to read the labels.yml file

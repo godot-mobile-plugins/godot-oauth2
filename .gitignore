@@ -58,7 +58,7 @@ xcuserdata/
 .DS_Store
 
 # documentation
-site
+site/
 
 # Node
 node_modules/

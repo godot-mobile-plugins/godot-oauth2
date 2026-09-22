@@ -18,7 +18,7 @@ This document describes each GitHub Actions workflow in `.github/workflows/`, co
 - `android/src/**`
 - `android/*.gradle.kts`
 
-**Runner:** `ubuntu-22.04`
+**Runner:** `ubuntu-24.04`
 
 **Purpose:**
 
@@ -49,7 +49,7 @@ Builds a debug Android AAR by invoking the `buildAndroidDebug` Gradle task from 
 - `android/src/**/*.kt`
 - `android/src/**/*.xml`
 
-**Runner:** `ubuntu-22.04`
+**Runner:** `ubuntu-24.04`
 
 **What it does:**
 
@@ -85,7 +85,7 @@ Enforces code style on all Android source files. Four independent checks are run
 - `.github/workflows/docs.yml`
 - `docs/zensical.toml`
 
-**Runner:** `ubuntu-22.04`
+**Runner:** `ubuntu-24.04`
 
 **Permissions:** `contents: read`, `pages: write`, `id-token: write`
 
@@ -116,7 +116,7 @@ Builds and deploys the project's documentation site to GitHub Pages using the [Z
 - `addon/src/**/*.gd`
 - `demo/**/*.gd`
 
-**Runner:** `ubuntu-22.04`
+**Runner:** `ubuntu-24.04`
 
 **What it does:**
 
@@ -145,7 +145,7 @@ Validates GDScript formatting across the addon and demo directories using two to
 - `android/*.gradle.kts`
 - `common/*.gradle.kts`
 
-**Runner:** `ubuntu-22.04`
+**Runner:** `ubuntu-24.04`
 
 **What it does:**
 
@@ -179,7 +179,7 @@ Validates formatting of all Gradle Kotlin DSL build files using two tools:
 - `ios/*.gradle.kts`
 - `ios/*.xcodeproj/**`
 
-**Runner:** `macos-latest`
+**Runner:** `macos-26`
 
 **Purpose:**
 
@@ -211,7 +211,7 @@ Builds a debug iOS xcframework. The workflow first downloads the Godot engine so
 - `ios/src/**/*.h`
 - `ios/src/**/*.swift`
 
-**Runner:** `macos-latest`
+**Runner:** `macos-26`
 
 **What it does:**
 
@@ -265,7 +265,7 @@ Validates that all `.properties` configuration files comply with the repository'
 - `script/**/*.sh`
 - `script/**/*.rb`
 
-**Runner:** `ubuntu-22.04`
+**Runner:** `ubuntu-24.04`
 
 **What it does:**
 

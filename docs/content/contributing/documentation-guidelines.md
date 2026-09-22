@@ -27,7 +27,7 @@ Text before list.
 ## Nested Lists
 
 - Nested list items must be indented using **4 spaces per level**.
-- This ensures compatibility with Python Markdown and MkDocs rendering.
+- This ensures compatibility with Python Markdown
 
 Correct:
 
@@ -43,7 +43,6 @@ Incorrect:
 
 ## Admonitions
 
-- Admonition blocks `!!! type` must be followed by a **blank line**
 - Content inside admonitions must be indented by **4 spaces**
 
 Correct:
@@ -60,6 +59,6 @@ This will not render correctly.
 
 When in doubt, prefer:
 
-- Blank line before block elements (lists, admonitions, tables)
+- Blank line before block elements (lists, tables)
 - 4-space indentation for nested content
 - Consistency over minimal indentation
