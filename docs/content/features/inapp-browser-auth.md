@@ -37,9 +37,9 @@ An additional property controls session privacy on iOS:
 
 Call `cancel_auth()` to dismiss an in-progress in-app browser session. This is safe to call in `EXTERNAL` mode as well — it is a no-op when no in-app session is active.
 
-```
+```gdscript
 func _on_cancel_button_pressed():
-	oauth2.cancel_auth()
+    oauth2.cancel_auth()
 ```
 
 ## Signals emitted in IN_APP mode

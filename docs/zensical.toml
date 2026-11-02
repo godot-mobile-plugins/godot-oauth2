@@ -1,10 +1,11 @@
 [project]
-site_name = "godot-oauth2 documentation"
+site_name = "godot-oauth2"
 site_description = "A Godot plugin that provides a unified GDScript interface for OAuth 2.0 authentication flows on Android and iOS."
 site_author = "godot-mobile-plugins"
-copyright = " Copyright (c) 2025 Godot Mobile Plugins"
+copyright = "Copyright (c) 2025-2026 Godot Mobile Plugins"
 site_url = "https://godot-mobile-plugins.github.io/godot-oauth2/"
 
+strict = true
 docs_dir  = "content"
 use_directory_urls = false
 edit_uri  = "edit/main/docs/content/"
@@ -84,9 +85,6 @@ media = "(prefers-color-scheme: dark)"
 
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.tables]
-[project.markdown_extensions.pymdownx.inlinehilite]
-[project.markdown_extensions.pymdownx.snippets]
-[project.markdown_extensions.pymdownx.superfences]
 
 [project.markdown_extensions.toc]
 toc_depth = 0

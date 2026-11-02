@@ -10,7 +10,9 @@ icon: fontawesome/solid/rocket
 - Set the **Browser Mode** in the inspector: `EXTERNAL` (default, system browser) or `IN_APP` (Chrome Custom Tab on Android / ASWebAuthenticationSession on iOS).
 
 - Add a `Deeplink` node to your scene and configure your redirect URI.
-  > **Note:** A `Deeplink` node is required in all cases **except** iOS with `IN_APP` mode, where the OS intercepts the redirect internally.
+
+!!! note
+    A `Deeplink` node is required in all cases **except** iOS with `IN_APP` mode, where the OS intercepts the redirect internally.
 
 - Assign the `Deeplink` node path in the `OAuth2` node inspector.
 
